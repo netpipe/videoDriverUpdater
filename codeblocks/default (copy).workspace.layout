@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveProject path="../11/wxtest/wxtest.cbp" />
+	<PreferredTarget name="Arduino Uno" />
+	<EditorTabsLayout layout="023dcc1054520dfd00725a8b00000002=0;huohi:sketch.cpp,*1;huohi:cores/CDC.cpp,2;huohi:cores/IPAddress.cpp,3;huohi:cores/HID.cpp,4;huohi:cores/HardwareSerial.cpp,5;huohi:cores/WString.cpp,6;huohi:cores/WMath.cpp,7;huohi:libraries/libraries.cpp@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=943;besth=725;minw=943;minh=725;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=023dcc1054520dfd00725a8b00000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+</CodeBlocks_workspace_layout_file>
