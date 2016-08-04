@@ -1,0 +1,26 @@
+#!/bin/bash
+#su - weby -c xchat
+#$(echo 1%)
+#echo $DISPLAY
+#DISPLAY=$1
+export DISPLAY=$1
+#export DISPLAY=$(echo ":$1.0")
+echo $DISPLAY
+sleep 10
+password=PASSWORDHERE
+expect -c "spawn su - weby -c \"pkill cairo-dock\";expect \"Password: \";send \"$password\r\";interact"
+
+#pkill cairo-dock;
+#sleep 10
+#gnomesu -u weby -c cairo-dock
+
+#expect -c 'spawn su - weby -c /usr/local/bin/cairo-dock;expect "Password: ";send "remote12\r";interact'
+echo $DISPLAY > /home/weby/display
+
+expect -c "set display :2.0;spawn su - weby -c /usr/local/bin/Cairo2;expect \"Password: \";send \"$password\r\";interact" :2.0
+
+#eval spawn [lindex $argv 0] [lrange $argv 0 end]
+
+#expect -c 'spawn gnomesu -u weby -c cairo-dock;expect "Password: ";send "remote12\r";interact'
+#expect -c 'spawn su - weby -c 'mate-terminal -e cairo-dock';expect "Password: ";send "remote12\r";interact' &
+

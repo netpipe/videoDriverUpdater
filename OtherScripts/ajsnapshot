@@ -1,0 +1,3 @@
+#!/bin/bash
+aj-snapshot -r ~/jack/aj.xml
+

@@ -1,0 +1,18 @@
+[Unit]
+Description=Liquid Cooling
+
+[Service]
+Type=oneshot
+
+#TimeoutStartSec=300
+#ExecStart=/etc/udev/rules.d/obsolete/liquid.sh
+
+ExecStartPre=/usr/local/bin/kuhlerd
+RemainAfterExit=no
+
+ExecStart=/usr/local/bin/kuhler_ctl -s 33 -f 40 -m 1
+#/usr/local/bin/kuhler_ctl -s 28 -f 40 -m 2
+#ExecStop='/usr/local/bin/kuhler_ctl -s 28 -f 40 -m 2'
+
+[Install]
+WantedBy=multi-user.target

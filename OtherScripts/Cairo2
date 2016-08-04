@@ -1,0 +1,12 @@
+#!/bin/bash
+#Tecan
+#Description: goes in /usr/local/bin   needs to be there for other users not able to access main users files
+#
+
+sleep 20
+DISPLAY=$(cat ~/display)
+echo $DISPLAY
+export DISPLAY=$DISPLAY
+/usr/local/bin/cairo-dock
+#pkill cairo-dock;
+#sleep 10

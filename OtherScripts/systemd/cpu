@@ -1,0 +1,2 @@
+cpus=$(nproc)
+for ((i=0;i<$cpus;i++)); do cpupower --cpu $i frequency-set -f 2.4GHz ; done
