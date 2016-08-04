@@ -4,8 +4,10 @@
 #Description: 
 
 #todo later installer option for fresh system if needed or for videocard switching.
-mkdir /home/weby/Downloads/NVIDIA
-cd /home/weby/Downloads/NVIDIA
+#username should be account accessible by all users
+username=weby
+mkdir "/home/$username/Downloads/NVIDIA"
+cd "/home/$username/Downloads/NVIDIA"
 
 #kernel change check
 instver=uname -r
@@ -13,40 +15,60 @@ major=$(echo $instver | cut -f 1 -d ".")
 minor=$(echo $instver | cut -f 1 -d ".")
 micro=$(echo $instver | cut -f 3 -d "." | cut -f 1 -d "-")
 
-pver=$(cat /home/weby/NVbuild | head -n 2 | tail -n 1 ) 
+pver=$(cat "/home/$username/NVbuild" | head -n 2 | tail -n 1 ) 
 pmajor=$(echo $pver | cut -f 1 -d ".")
 pminor=$(echo $pver | cut -f 1 -d ".")
 pmicro=$(echo $pver | cut -f 3 -d "." | cut -f 1 -d "-")
 
 if [ major==pmajor & minor==pminor & micro==pmicro ]
+echo "kernel driver version the same...\n"
+echo "checking for video driver updates"
+#check local file to see if new video driver would be suiting
+#checkNVUpdate
 
-else if #greater version update video driver
+elif #greater version update video driver
+
+checkNVUpdate
+install
+
+#if it worked write new nvbuild information
+build=$(uname -r | cut -f 3 -d "."| cut -f 1 -d "-")
+echo $instver > "/home/$username/NVbuild"
+echo $build >> "/home/$username/NVbuild" #append kernel version to line 2 of NVbuild
+fi
 
 
+checkNVUpdate () {
 curl ftp://download.nvidia.com/XFree86/Linux-x86_64/ | while read line; do echo $line | cut -f 9 -d " ";done
 instver=$(ls | grep NVIDIA | cut -f 4 -d "-") | cut -f 3 -d ".")
 major=$(echo $instver | cut -f 2 -d ".")
 minor=$(echo $instver | cut -f 1 -d ".")
+
+pinstver=$(echo /home/weby/NVbuild | head -n 1)
+pmajor=$(echo $instver | cut -f 2 -d ".")
+pminor=$(echo $instver | cut -f 1 -d ".")
 #update
-curl -C - "ftp://download.nvidia.com/XFree86/Linux-x86_64/$update/NVIDIA-Linux-x86_64-$update.run" 
 
+curl -C - "ftp://download.nvidia.com/XFree86/Linux-x86_64/$update/NVIDIA-Linux-x86_64-$update.run"
 
-#if it worked write new nvbuild information
-build=$(uname -r | cut -f 3 -d "."| cut -f 1 -d "-")
-echo $instver > /home/weby/NVbuild
-echo $build >> /home/weby/NVbuild #append kernel version to line 2 of NVbuild
-fi
+}
 
-if [ install ]
+#if [ $1=="install" ]
+install () {
 ./NVIDIA-Linux-x86_64-$instver.run -x
 cd ./NVIDIA-Linux-x86_64-$instver/kernel
 make clean 
 make install
-fi
-
-if [ $1=="uninstall" ]
+echo $instver > "/home/$username/NVbuild"
+build=$(uname -r | cut -f 3 -d "."| cut -f 1 -d "-")
+echo $build >> "/home/$username/NVbuild"
+#fi
+}
+uninstall (){
+#if [ $1=="uninstall" ]
 ./NVIDIA-Linux-x86_64-$instver.run --uninstall
-fi
+#fi
+}
 
 #if 
 
