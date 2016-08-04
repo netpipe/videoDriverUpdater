@@ -1,0 +1,137 @@
+#case sensitive
+# tip place shortcut to this file on desktop you'll be using it more than you think.... 
+#hotkeys
+#should be able to write something to reload this file.
+
+#works great for trackman thumbball mouse
+
+#,Up,Shift_L|R|-R|-Shift_L|O|-O|F|-F|L|-L|Return
+# ROFL
+
+"^caja"
+None, Button4, Button4, 2
+None, Button5, Button5, 2
+#None, Thumb2,  Control_L|Page_Down
+#None, Thumb1, Control_L|Page_Up
+None, Thumb1,  Page_Down,2
+None, Thumb2, Page_Up,2
+Control_L, Thumb2,  Alt_L|Left
+Control_L, Thumb1,  Alt_L|Right
+Shift_L, Button4,  Control_L|Page_Up
+Shift_L, Button5,  Control_L|Page_Down
+#None, Button2,  Control_L|Page_Down
+
+"^eom"
+None, Button4, Button4, 4
+None, Button5, Button5, 4
+None, Thumb2,  Control_L|Left
+None, Thumb1, Control_L|Right
+
+"^Arduino"
+None, Button4, Button4, 4
+None, Button5, Button5, 4
+
+
+"^Dooble"
+None, Button4, Button4, 11
+None, Button5, Button5, 11
+Control_L,Button4, Page_Up
+Control_L,Button5, Page_Down
+Shift_L,Button4, Up
+Shift_L,Button5, Down
+Shift_L, Thumb2,  Shift_L|Control_L|Page_Up
+Shift_L, Thumb1, Shift_L|Control_L|Page_Down
+Control_L, Thumb1,  Control_L|Page_Up
+Control_L, Thumb2, Control_L|Page_Down
+None, Thumb2,  Page_Up
+None, Thumb1, Page_Down
+
+"^codeblocks"
+None, Button4|Control_L, Button4, 2
+None, Button5|Control_L, Button5, 2
+#None, Button4, Button4, 1
+#None, Button5, Button5, 1
+Control_L|Shift_L,Button4, Page_Up
+Control_L|Shift_L,Button5, Page_Down
+Control_L,Button4,Button4, 1
+Control_L,Button5,Button5, 1
+
+"^Firefox"
+#None, Button4, Button4, 2
+#None, Button5, Button5, 2
+Control_L,Button4, Page_Up
+Control_L,Button5, Page_Down
+Shift_L,Button4, Up
+Shift_L,Button5, Down
+Shift_L, Thumb2,  Shift_L|Control_L|Page_Up
+Shift_L, Thumb1, Shift_L|Control_L|Page_Down
+Control_L, Thumb1,  Control_L|Page_Up
+Control_L, Thumb2, Control_L|Page_Down
+None, Thumb2,  Page_Up
+None, Thumb1, Page_Down
+
+"^pluma"
+#, Button4, Page_Up
+#, Button5, Page_Down 
+, Button4, Button4,1
+, Button5, Button5, 1
+, Thumb2,  Page_Up
+, Thumb1, Page_Down
+Control_L, Button4,Up
+Control_L, Button5,Down
+Alt_L, Thumb2,  Control_L|f
+Alt_L, Thumb1, Control_L|h
+
+"^XChat"
+#@Exclude
+#@Repeat
+#None, Button4, Up
+#None, Button5, Down
+Control_L,Button4, Control_L|Page_Up
+Control_L,Button5, Control_L|Page_Down
+None, Thumb2,  Page_Up
+None, Thumb1, Page_Down
+Control_L, Thumb2,  Control_L|Page_Up
+Control_L, Thumb1, Control_L|Page_Down
+
+"^liferea"
+#None, Button4, Up
+#None, Button5, Down
+#Control_L,Button4, Control_L|Page_Up
+#Control_L,Button5, Control_L|Page_Down
+None, Thumb2,  Up
+None, Thumb1, Down
+#Control_L, Thumb2,  Control_L|Page_Up
+#Control_L, Thumb1, Control_L|Page_Down
+
+
+"^exaile"
+None, Button4, Button4, 1
+None, Button5, Button5, 1
+#None, Thumb2,  Button4, 10
+#None, Thumb1, Button5, 10
+#Control_L, Thumb1,  Control_L|c
+#Control_L, Thumb2, Control_L|v
+#None, Thumb2,  Page_Up
+#None, Thumb1, Page_Down
+
+"^"
+Shift_L, Thumb1,  Control_L|c #change this in ff later
+Shift_L, Thumb2, Control_L|v
+Control_L, Thumb1,  Control_L|c
+Control_L, Thumb2, Control_L|v
+#launch email
+Control_L|Shift_L, Thumb1,  Control_L|Meta_L|Page_Up
+#launch browser
+Control_L|Shift_L, Thumb2, Control_L|Meta_L|Page_Down
+#None, Button4, Button4, 1
+#None, Button5, Button5, 1
+None, Thumb2,  Page_Up
+None, Thumb1, Page_Down
+
+#minimize
+
+
+#Shift_L, Button3, j   do not work
+#Shift_L, Button2, j
+
