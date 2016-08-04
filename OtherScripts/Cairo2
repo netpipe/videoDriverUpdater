@@ -1,7 +1,7 @@
 #!/bin/bash
 #Tecan
 #Description: goes in /usr/local/bin   needs to be there for other users not able to access main users files
-#
+# /etc/ssh/ssh_config needs the  # marks off   #ForwardAgent no   ForwardX11 no    if you get issues with forwarding maybe
 
 sleep 20
 DISPLAY=$(cat ~/display)
