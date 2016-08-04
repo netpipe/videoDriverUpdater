@@ -9,6 +9,8 @@ username=weby
 mkdir "/home/$username/Downloads/NVIDIA"
 cd "/home/$username/Downloads/NVIDIA"
 
+#check if NVbuild file exists if not check for nvidia install and write one or install otherwise
+
 #kernel change check
 instver=uname -r
 major=$(echo $instver | cut -f 1 -d ".")
@@ -25,12 +27,9 @@ echo "kernel driver version the same...\n"
 echo "checking for video driver updates"
 #check local file to see if new video driver would be suiting
 #checkNVUpdate
-
 elif #greater version update video driver
-
 checkNVUpdate
 install
-
 #if it worked write new nvbuild information
 build=$(uname -r | cut -f 3 -d "."| cut -f 1 -d "-")
 echo $instver > "/home/$username/NVbuild"
@@ -44,7 +43,7 @@ instver=$(ls | grep NVIDIA | cut -f 4 -d "-") | cut -f 3 -d ".")
 major=$(echo $instver | cut -f 2 -d ".")
 minor=$(echo $instver | cut -f 1 -d ".")
 
-pinstver=$(echo /home/weby/NVbuild | head -n 1)
+pinstver=$(echo "/home/$username/NVbuild" | head -n 1)
 pmajor=$(echo $instver | cut -f 2 -d ".")
 pminor=$(echo $instver | cut -f 1 -d ".")
 #update
