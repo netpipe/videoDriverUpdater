@@ -1,0 +1,69 @@
+[SETTINGS]
+; 1/on/yes/true - work only when NumLock is on
+; ignore - ignore NumLock state (works when on and off)
+; 0/off/no/false - work only when NumLock is off
+numlock = ignore
+
+; invert window gravity if it needs resizing (eg terminals with incremental 
+; size change), works only for grid
+invert_on_resize = yes
+
+; if true try expandig in vertical axis first
+vertical_first = yes
+
+; grid_2x2, grid_3x2, grid_3x3, custom
+layout = grid_3x2
+
+;ignore_actions = grid_height
+
+[KEYS]
+; section/point-name =  key
+top-left = KP_7
+top = KP_8
+top-right = KP_9
+left = KP_4
+middle = KP_5
+right = KP_6
+bottom-right = KP_3
+bottom = KP_2
+bottom-left = KP_1
+
+switch = Alt-KP_Divide
+cycle = Alt-Shift-KP_Divide
+
+; key modifiers (Alt, Shift, Ctrl, Super) for actions 
+float = Alt
+expand = Shift
+shrink = Alt-Shift
+put = Alt-Ctrl
+; cycle widths
+grid_width = Ctrl
+; cycle heights
+grid_height = Ctrl-Shift
+
+; exit PyWo
+exit = Ctrl-Shift-Alt-Q
+; reload configuration file
+reload = Ctrl-Shift-Alt-R
+; print info for current window
+debug = Ctrl-Shift-Alt-I
+
+; Example of custom screen position definition:
+;
+; [name-of-screen-position]
+; direction     - direction of move, expand, shrink
+; position      - position relative to screen (for put and grid)
+; gravity       - window gravity (if no gravity set, same as position)
+; widths        - list of widths for grid
+; heights       - list of height for grid
+; 
+; valid direction, position, gravity values:
+; - TOP_LEFT, TOP, TOP_RIGHT, 
+; - LEFT, MIDDLE, RIGHT, 
+; - BOTTOM_LEFT, BOTTOM, BOTTOM_RIGHT
+; - or x, y percent value - eg: 1.0, 0.5
+;
+; valid widths, heights values:
+; - QUARTER, THIRD, HALF, FULL
+; - 1.0/3*2 or THIRD*2 (will be evaluated)
+
