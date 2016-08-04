@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alsa>
+  <client name="System">
+    <port id="0" />
+    <port id="1" />
+  </client>
+  <client name="Midi Through">
+    <port id="0" />
+  </client>
+  <client name="USB Midi">
+    <port id="0">
+      <connection client="Midi Through" port="0" />
+    </port>
+  </client>
+  <client name="Client-128" />
+  <client name="a2jmidid" />
+</alsa>
+<jack>
+  <client name="system">
+    <port name="capture_1">
+      <connection port="PulseAudio JACK Source:front-left" />
+    </port>
+  </client>
+  <client name="PulseAudio JACK Sink">
+    <port name="front-left">
+      <connection port="system:playback_1" />
+    </port>
+    <port name="front-right">
+      <connection port="system:playback_2" />
+    </port>
+    <port name="rear-left">
+      <connection port="system:playback_7" />
+    </port>
+    <port name="rear-right">
+      <connection port="system:playback_8" />
+    </port>
+    <port name="lfe">
+      <connection port="system:playback_3" />
+    </port>
+  </client>
+  <client name="a2j">
+    <port name="Midi Through [14] (capture): Midi Through Port-0" />
+  </client>
+</jack>

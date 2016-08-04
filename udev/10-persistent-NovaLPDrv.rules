@@ -1,0 +1,2 @@
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1235", ATTRS{idProduct}=="000e", DRIVERS=="NovaLPDrv"
+KERNEL=="nlp[0-9]", DRIVERS=="NovaLPDrv", MODE="0666"

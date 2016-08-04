@@ -1,0 +1,5 @@
+#inq cloud
+#ACTION=="add", SUBSYSTEM=="usb_device", ATTRS{idVendor}=="0x2314", ATTRS{idProduct}=="0x0002",  GROUP="plugdev", MODE="0666"
+#hui 210
+ACTION=="add", SUBSYSTEM=="usb_device", ATTRS{idVendor}=="0x12d1", ATTRS{idProduct}=="0x1038",  GROUP="plugdev", MODE="0666"
+

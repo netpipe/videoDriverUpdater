@@ -1,0 +1,42 @@
+#
+# good ole settings to get thangs working
+#
+
+#SUBSYSTEM=="usb", ATTRS{product}=="Arduino SA",    ATTRS{idProduct}=="2341", ATTRS{idVendor}=="003e",MODE="0666",SYMLINK+="arduino arduino_due_$attr{serial}",MODE="0666",GROUP="tty"
+
+SUBSYSTEM=="usb", ATTRS{product}=="ARDUINO DUE",    ATTRS{idProduct}=="2341", ATTRS{idVendor}=="003e", SYMLINK+="arduino arduino_due_$attr{serial}",MODE="0666",GROUP="tty"
+
+#attinyusb
+#SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="plugdev", MODE="0666"
+
+
+#arduino stuff
+SUBSYSTEM=="usb", ATTRS{product}=="FT232R USB UART", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="arduino arduino_$attr{serial}"
+SUBSYSTEM=="usb", ATTRS{product}=="ARDUINO NANO",    ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="arduino arduino_nano_$attr{serial}"
+
+SUBSYSTEM=="usb", ATTRS{product}=="ARDUINO DUE at91SAM",    ATTRS{idProduct}=="03eb", ATTRS{idVendor}=="6124", MODE="0666"
+
+#KERNEL=="ttyUSB*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SYMLINK+="reprap"
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", GROUP="users", MODE="0666"
+
+# USBtinyISP Programmer rules
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0666"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0479", GROUP="users", MODE="0666"
+# USBasp Programmer rules http://www.fischl.de/usbasp/
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", GROUP="users", MODE="0666"
+
+# Mdfly.com Generic (SiLabs CP2102) 3.3v/5v USB VComm adapter
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP="users", MODE="0666"
+
+#Atmel AVR Dragon (dragon_isp) rules
+SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2107", GROUP="users", MODE="0666"
+
+#Atmel AVR JTAGICEMKII rules
+SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2103", GROUP="users", MODE="0666"
+
+#Atmel Corp. AVR ISP mkII
+SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2104", GROUP="users", MODE="0666"
+</nowiki>}}
+
+

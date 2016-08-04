@@ -1,0 +1,10 @@
+#1st choice enable from system load a shell script from startup gui manager
+#SUBSYSTEM=="usb", ATTR{idVendor}=="2433", ATTR{idProduct}=="b111", GROUP="plugdev",MODE="0666"
+#SUBSYSTEM=="usb", ATTR{idVendor}=="2433", ATTR{idProduct}=="b111"
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="2433", ATTR{idProduct}=="b111", GROUP="plugdev" RUN+="/etc/udev/rules.d/obsolete/liquid.sh"
+
+#SUBSYSTEM=="usb", ATTR{idVendor}=="2433", ATTR{idProduct}=="b111", MODE="0666", GROUP="plugdev",RUN+="/etc/udev/rules.d/liquid.sh"
+
+#ACTION=="add", SUBSYSTEM=="usb_device", ATTRS{idVendor}=="0x2433", ATTRS{idProduct}=="0xb111", GROUP="users",MODE="0666"
+
