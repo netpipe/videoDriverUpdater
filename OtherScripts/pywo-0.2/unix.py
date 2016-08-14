@@ -3,11 +3,12 @@ from Xlib.display import Display
 from Xlib import X
 from Xlib.protocol import event
 import Xlib.ext.xtest
-
 from pymouse import PyMouseMeta
+import os
+#display = Display(":0") # sometimes this works better
+#display = Display(":1")
+display = Display(os.environ["DISPLAY"])
 
-#display = Display(":0")  sometimes this works better
-display = Display(":1")
 root = display.screen().root
 
 class PyMouse(PyMouseMeta):
