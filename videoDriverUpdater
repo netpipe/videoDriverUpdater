@@ -66,6 +66,10 @@ echo $build >> "/home/$username/NVbuild"
 uninstall (){
 #if [ $1=="uninstall" ]
 ./NVIDIA-Linux-x86_64-$instver.run --uninstall
+#rm /etc/X11/nvidia.conf
+#rm /etc/modprobe.d/nvidia-installer-disable-nouveau.conf
+#remove residual modules left inside /usr/lib64/xorg/ to get nouveau working
+
 #fi
 }
 
