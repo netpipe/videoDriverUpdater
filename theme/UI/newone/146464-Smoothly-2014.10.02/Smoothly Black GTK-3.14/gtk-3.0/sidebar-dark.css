@@ -1,0 +1,41 @@
+/************
+ * Sidebars *
+*************/
+.sidebar {
+    background-color: @bg_color-b;
+}
+
+.sidebar .view {
+    background-color: alpha (shade (@text_color-b, 0.95), 0.9);
+}
+
+.sidebar,
+.sidebar .view {
+    color: @base_color-b;
+    text-shadow: 0 0 alpha (shade (@sidebar_text_shadow_color-b, 1.25), 0.4);
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade (@border_gradient_color_a-b, 2.80);
+    border-radius: 3px;
+}
+
+.sidebar.view:prelight {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a-b),
+			                         color-stop (0.03, @gradient_color_a-b),
+                                     to (@gradient_color_b-b));
+    border-style: solid;
+    border-width: 1px;
+    border-color: @border_gradient_color_b-b;
+}
+
+GtkHCollapsablePaned {
+    border-width: 1px;
+    -GtkPaned-handle-size: 3;
+}
+
+GtkHCollapsablePaned.pane-separator,
+GtkHCollapsablePaned.pane-separator:prelight,
+GtkHCollapsablePaned.pane-separator:selected {
+}
+

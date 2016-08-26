@@ -1,0 +1,103 @@
+/****************
+ * Text Entries *
+ ****************/
+.entry,
+.toolbar.entry {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@base_color, 0.60)),
+                                     color-stop (0.50, shade (@base_color, 0.95)),
+                                     color-stop (0.90, @base_color),
+                                     to (@base_color));
+    border-color: shade (@border_gradient_color_b, 1.25);
+    box-shadow: inset 2px 2px shade (@inner_gradient_color_a, 1.00),
+                inset -2px -2px shade (@inner_gradient_color_a, 1.00),
+                inset 1px 1px shade (@border_gradient_color_b, 0.85),
+                inset -1px -1px shade (@border_gradient_color_b, 0.85);
+    
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px 6px 6px 6px;
+    padding:  5px;
+	background-color: shade (@base_color, 1.00);/*evolution*/
+}
+
+.entry:focused {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@inner_gradient_color_a, 0.80)),
+                                     color-stop (0.50, shade (@base_color, 0.95)),
+                                     color-stop (0.90, @base_color),
+                                     to (@base_color));
+    border-color: shade (@glow_color, 1.45);
+    box-shadow: inset 1px 1px alpha (@inner_gradient_color_a, 0.10),
+                inset -1px -1px alpha (@inner_gradient_color_a, 0.10);
+}
+
+.entry:active {
+    background-color: shade (@gradient_color_b, 1.30);
+}
+
+.entry:selected {
+    color: @text_color;
+}
+
+.entry:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+			                         from (alpha (@base_color, 0.20)),
+			                         to (alpha (@base_color, 0.00)));
+	background-color: alpha (@base_color, 0.20);/*evolution*/
+}
+
+.primary-toolbar .entry.progressbar,
+.entry.progressbar {
+    background-color: @glow_color;
+    color: @text_color;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+.entry.button {
+    background-color: @glow_color;
+    color: @text_color;
+    border-width: 1px;
+    border-radius: 1px;
+}
+
+/* Leftmost button */
+.linked .entry:first-child {
+    border-right-width: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Middle button */
+.linked .entry:only-child {
+    border-right-width: 0;
+    border-left-width: 0;
+    border-radius: 0;
+}
+
+/* Rightmost button */
+.linked .entry:last-child {
+    border-left-width: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+/* Top button (vertical) */
+.linked.vertical .entry:first-child {
+    border-bottom-width: 0;
+    border-radius: 6px 6px 0 0;
+}
+
+/* Middle button (vertical) */
+.linked.vertical .entry {
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-radius: 0;
+}
+
+/* Bottom button (vertical) */
+.linked.vertical .entry:last-child {
+    border-top-width: 0;
+    border-radius: 0 0 6px 6px;
+}

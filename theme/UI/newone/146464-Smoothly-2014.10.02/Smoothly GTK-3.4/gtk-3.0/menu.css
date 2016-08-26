@@ -1,0 +1,167 @@
+/************
+ * Menubars *
+ ************/
+.menuitem {
+    padding: 1.5px 3px 1.5px 3px;
+}
+
+.menubar {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (@gradient_color_b));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@text_color, 0.00)),
+                                                 to (alpha (@text_color, 0.10)));
+
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (@border_gradient_color_a),
+                                           to (shade (@border_gradient_color_b, 0.80)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@inner_gradient_color_a, 0.95)),
+                                                 to (shade (@inner_gradient_color_b, 1.00)));
+    -unico-inner-stroke-width: 1;
+    border-width: 0px;
+    border-style: none;
+    padding: 0px;
+    color: @text_color;
+    text-shadow: 1 1 alpha (shade (@text_shadow_color, 1.25), 0.4);
+    -GtkWidget-window-dragging: true;
+    -GtkMenuBar-internal-padding: 2;
+}
+
+.menubar.menuitem:prelight {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_activ_color_a),
+                                     to (@gradient_activ_color_b));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear,
+                                                 left top, left bottom,
+                                                 from (alpha (@text_color, 0.00)),
+                                                 to (alpha (@text_color, 0.00)));
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@border_gradient_color_a, 0.90)),
+                                           to (shade (@border_gradient_color_a, 0.75)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@border_gradient_color_a, 0.60)),
+                                                 to (shade (@border_gradient_color_a, 1.10)));
+
+    color: @text_color;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 0px;
+    border-color: @border_gradient_color_b;
+}
+
+.menubar .menuitem *:prelight {
+    color: shade (@glow_color, 0.75);
+}
+
+.menubar.menuitem {
+    border-width: 1px;
+    border-style: none;
+}
+
+.menu {
+    background-image: -gtk-gradient (linear, left top, right top,
+
+                                     from (shade (@bg_color, 0.65)),
+                                     color-stop (0.12, shade (@bg_color, 0.92)),
+                                     color-stop (1.00, shade (@bg_color, 0.92)),
+                                     to (shade (@bg_color, 0.92)));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@border_gradient_color_b, 1.25)),
+                                                 to (shade (@border_gradient_color_b, 1.25)));
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@border_gradient_color_b, 0.85)),
+                                           to (shade (@border_gradient_color_b, 0.85)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, right top,
+                                           from (shade (@inner_gradient_color_a, 0.95)),
+                                           color-stop (0.12, shade (@inner_gradient_color_a, 1.05)),
+                                           color-stop (1.00, shade (@inner_gradient_color_a, 1.05)),
+                                           to (shade (@inner_gradient_color_a, 1.05)));
+    -unico-inner-stroke-width: 1;
+    -GtkMenuItem-arrow-scaling: 0.4;
+    padding: 0px 3px 0px 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+}
+
+.menu *{
+    background-color: @transparent;
+}
+
+.menu.menuitem {
+    -unico-menuitem-arrow-color: @gradient_color_b;
+    padding: 2px;
+}
+
+.menuitem.accelerator {
+    color: alpha (@base_color, 0.65);
+}
+
+.menuitem.accelerator:prelight,
+.menuitem.accelerator:active {
+    color: alpha (@base_color, 0.50);
+}
+
+.menuitem:insensitive {
+    color: alpha (@text_color, 0.40);
+}
+
+
+.menuitem:active,
+.menuitem:prelight {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (@gradient_color_b));
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (@border_gradient_color_a),
+                                           to (shade (@border_gradient_color_b, 0.80)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@inner_gradient_color_a, 1.15)),
+                                                 to (shade (@inner_gradient_color_b, 1.00)));
+    -unico-inner-stroke-width: 1;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    color: shade (@text_color, 1.20);
+    text-shadow: 1 1 alpha (shade (@text_shadow_color, 1.25), 0.4);
+}
+
+.separator {
+    border-color: shade (@base_color, 0.50);
+    border-style: solid;
+
+    -unico-border-gradient: none;
+    -unico-inner-stroke-color: alpha (shade (@base_color, 1.25), 0.5);
+    -unico-inner-stroke-gradient: none;
+}
+
+/* menu radio and check items are drawn differently */
+.menu.check:active {
+    color: @border_gradient_color_a;
+}
+
+.menu.radio:active {
+    color: @border_gradient_color_a;
+}
+
+.menu.check:prelight {
+    color: @border_gradient_color_b;
+}
+
+.menu.radio:prelight {
+    color: @border_gradient_color_b;
+}

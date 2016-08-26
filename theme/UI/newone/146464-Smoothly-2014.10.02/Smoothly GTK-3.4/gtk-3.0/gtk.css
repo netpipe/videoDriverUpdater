@@ -1,0 +1,48 @@
+/**************
+* Base colors *
+***************/
+@define-color base_color #ffffff; 
+@define-color text_color #000000; 
+@define-color nautilus_desktop_text_color #ffffff; 
+@define-color nautilus_desktop_text_shadow_color #000000; 
+@define-color text_shadow_color #F6F6F9; 
+@define-color bg_color #E9E9F4; 
+
+@define-color sidebar_text_color #000000; 
+@define-color sidebar_text_shadow_color #F6F6F9; 
+@define-color sidebar_bg_color #FAFAFA; 
+
+/******************
+* Gradient colors *
+*******************/
+@define-color gradient_color_a #F6F6F9; 
+@define-color gradient_color_b #9A9AC1; 
+@define-color border_gradient_color_a #C5C5DA; 
+@define-color border_gradient_color_b #8A8AB5; 
+@define-color inner_gradient_color_a #DDDDEA; 
+@define-color inner_gradient_color_b #9E9EC3; 
+
+@define-color gradient_activ_color_a #FAFAFA; 
+@define-color gradient_activ_color_b #8A8A9C; 
+
+@define-color glow_color #0000FF; 
+@define-color transparent rgba (0, 0, 0, 0); 
+
+
+/**************
+* Info colors *
+***************/
+@define-color link_color #0030FF;
+@define-color info_color #D5B052;
+@define-color warning_color #f57900;
+@define-color error_color #cc0000;
+@define-color question_color #62B5FF;
+
+@define-color info_bg_color #AD8F43;
+@define-color warning_bg_color #E06629;
+@define-color error_bg_color #B20000;
+@define-color question_bg_color #5297D5;
+
+
+@import url("gtk-widgets.css");
+

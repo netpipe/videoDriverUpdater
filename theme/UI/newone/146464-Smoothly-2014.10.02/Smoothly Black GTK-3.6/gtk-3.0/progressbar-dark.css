@@ -1,0 +1,62 @@
+/****************
+ * Progressbars *
+ ****************/
+GtkProgressBar {
+    border-radius: 3px;
+    border-width: 1px;
+    padding: 0;
+}
+
+.progressbar,
+.progressbar row,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focused,
+GtkProgressBar.progressbar {
+    border-radius: 3px;
+    border-width: 1px;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_color_a-b, 1.80)),
+                                     to (shade (@glow_color-b, 0.00)));
+}
+
+.progressbar.vertical,
+.progressbar.vertical row,
+.progressbar.vertical row:hover,
+.progressbar.vertical row:selected,
+.progressbar.vertical row:selected:focused,
+GtkProgressBar.progressbar.vertical {
+    border-radius: 3px;
+    border-width: 1px;
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (@gradient_color_a-b),
+                                     from (shade (@gradient_color_a-b, 1.80)),
+                                     to (shade (@glow_color-b, 0.00)));
+}
+
+.trough,
+.trough row,
+.trough row:hover,
+.trough row:active,
+.trough row:selected,
+.trough row:selected:focused,
+GtkProgressBar.trough {
+    border-radius:  3px;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_color_b-b, 1.95)),
+                                     to (shade (@gradient_color_a-b, 1.95)));
+}
+
+.trough.vertical,
+.trough.vertical row,
+.trough.vertical row:hover,
+.trough.vertical row:active,
+.trough.vertical row:selected,
+.trough.vertical row:selected:focused,
+GtkProgressBar.trough.vertical {
+    border-radius:  3px;
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (@gradient_color_b-b, 1.95)),
+                                     to (shade (@gradient_color_a-b, 1.95)));
+}
+

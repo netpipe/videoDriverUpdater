@@ -1,0 +1,156 @@
+/*************************
+ * Check and Radio items *
+ *************************/
+* .check,
+.check row:selected,
+.check row:selected:focused {
+    border-radius: 3px;
+    -unico-inner-stroke-width: 0;
+}
+
+* .radio,
+.radio:active,
+.radio:hover,
+.radio row:selected,
+.radio row:selected:focused {
+    border-radius: 8px;
+    -unico-inner-stroke-width: 0;
+}
+
+GtkExpander:hover,
+GtkCheckButton:hover {
+    border-width: 1px;
+    border-radius: 3px;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_color_a, 1.85)),
+				                     to (shade (@gradient_color_a, 0.55)));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@text_color, 0.00)),
+                                                 to (alpha (@text_color, 0.10)));
+
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (@gradient_color_b),
+                                           to (shade (@gradient_color_b, 0.20)));
+    -unico-inner-stroke-width: 0;
+    -unico-bullet-outline-color: @border_gradient_color_a;
+    -unico-bullet-color: @text_color;
+
+    border-width: 1px;
+    background-color: @bg_color;
+}
+
+GtkRadioButton:hover {
+    border-width: 1px;
+    border-radius: 30px;
+}
+
+* .check,
+* .radio,
+.check row:selected,
+.check row:selected:focused,
+.radio row:selected,
+.radio row:selected:focused {
+    background-image: -gtk-gradient (linear, left bottom, left top,
+                                     from (shade (@gradient_color_a, 0.35)),
+                                     to (shade (@gradient_color_a, 0.85)));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@text_color, 0.00)),
+                                                 to (alpha (@text_color, 0.10)));
+
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (@gradient_color_b),
+                                           to (shade (@gradient_color_b, 0.20)));
+    -unico-inner-stroke-width: 0;
+    -unico-bullet-outline-color: @border_gradient_color_a;
+    -unico-bullet-color: @text_color;
+
+    border-width: 1px;
+    background-color: @bg_color;
+}
+
+.check:insensitive,
+.check row:selected:insensitive,
+.check row:selected:focused:insensitive,
+.radio:insensitive,
+.radio:inconsistent:insensitive,
+.radio row:selected:insensitive,
+.radio row:selected:focused:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@bg_color, 0.85)),
+                                     color-stop (0.20, shade (@bg_color, 0.85)),
+                                     to (shade (@bg_color, 0.75)));
+
+    -unico-inner-stroke-style: custom;
+    -unico-outer-stroke-style: custom;
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@base_color, 0.00)),
+                                                 color-stop (0.75, alpha (@base_color, 0.00)),
+                                                 to (alpha (@base_color, 0.20)));
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@bg_color, 0.75)),
+                                           to (shade (@bg_color, 0.85)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@text_color, 0.10)),
+                                                 to (alpha (@text_color, 0.05)));
+
+    -unico-bullet-color: alpha (@gradient_color_b, 0.20);
+}
+
+.check:active,
+.check row:selected:active,
+.check row:selected:focused:active,
+.radio:active,
+.radio row:selected:active,
+.radio row:selected:focused:active {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_activ_color_a),
+                                     to (@gradient_activ_color_b));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@text_color, 0.00)),
+                                                 to (alpha (@text_color, 0.10)));
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (@border_gradient_color_b),
+                                           to (shade (@border_gradient_color_b, 0.10)));
+
+    -unico-inner-stroke-width: 0;
+    border-width: 1px;
+}
+
+.check:active:insensitive,
+.check row:selected:active:insensitive,
+.check row:selected:focused:active:insensitive {
+}
+
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focused:inconsistent,
+.radio:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focused:inconsistent {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_activ_color_a),
+                                     color-stop (0.10, @gradient_activ_color_a),
+                                     color-stop (0.60, @gradient_activ_color_b),
+                                     to (@gradient_activ_color_b));
+}
+
+.check:inconsistent:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (alpha(@gradient_activ_color_a, 0.50)),
+                                     color-stop (0.10, alpha (@gradient_activ_color_a, 0.50)),
+                                     color-stop (0.60, alpha (@gradient_activ_color_b, 0.50)),
+                                     to (alpha (@gradient_activ_color_b, 0.50)));
+}
+

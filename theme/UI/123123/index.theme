@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=123123
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Menta
+MetacityTheme=BlackMATE
+IconTheme=Alpha-1
+GtkColorScheme=fg_color:#6c8ab726eed1,bg_color:#210821082108,text_color:#17faa633e43e,base_color:#6b5a6b5a6b5a,selected_fg_color:#01320000be6a,selected_bg_color:#6558cf6827a2,tooltip_fg_color:#000000000000,tooltip_bg_color:#ffffffffbfbf
+CursorTheme=mate
+CursorSize=24
+NotificationTheme=Coco

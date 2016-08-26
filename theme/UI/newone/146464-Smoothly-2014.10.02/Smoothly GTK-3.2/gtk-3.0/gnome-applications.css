@@ -1,0 +1,201 @@
+/****************
+ * Applications *
+ ****************/
+ApDocView, /* Abiword */
+EogScrollView, /* Eog */
+CheeseThumbView /* Cheese */
+{
+    -EogScrollView-shadow-type: none;
+}
+
+/* gnome-terminal */
+TerminalScreen {
+    background-color: @text_color;
+    color: @base_color;
+    -TerminalScreen-background-darkness: 0.95;
+}
+
+/* nautilus */
+.nautilus-canvas-item {
+    border-radius: 3;
+}
+
+.nautilus-desktop.nautilus-canvas-item {
+    border-style: solid;
+    border-width: 1;
+    border-radius: 6;
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (@bg_color, 0.55)),
+                                     color-stop (0.40, shade (@bg_color, 0.82)),
+                                     color-stop (0.60, shade (@bg_color, 0.82)),
+                                     to (shade (@bg_color, 0.82)));
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, right top,
+                                           from (shade (@border_gradient_color_b, 0.55)),
+                                           color-stop (0.40, shade (@border_gradient_color_b, 0.82)),
+                                           color-stop (0.60, shade (@border_gradient_color_b, 0.82)),
+                                           to (shade (@border_gradient_color_b, 0.82)));
+    color: @nautilus_desktop_text_color;
+    text-shadow: 1 1 @nautilus_desktop_text_shadow_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active {
+    color: @nautilus_desktop_text_shadow_color;
+    text-shadow: 1 1 @nautilus_desktop_text_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected {
+    text-shadow: 1 1 @nautilus_desktop_text_color;
+    -unico-glow-color: shade (@glow_color, 0.85);
+    -unico-glow-radius: 5;
+}
+
+NautilusTrashBar.info,
+NautilusXContentBar.info,
+NautilusSearchBar.info,
+NautilusQueryEditor.info {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@bg_color, 0.85)),
+                                     color-stop (0.50, shade (@bg_color, 0.95)),
+                                     color-stop (1.00, @bg_color),
+                                     to (shade (@bg_color, 0.95)));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@border_gradient_color_b, 1.25)),
+                                                 to (shade (@border_gradient_color_b, 1.25)));
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@border_gradient_color_b, 0.85)),
+                                           to (shade (@border_gradient_color_b, 0.85)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@inner_gradient_color_a, 1.00)),
+                                           to (shade (@inner_gradient_color_a, 1.10)));
+
+    -unico-inner-stroke-width: 1;
+    -GtkToolbar-button-relief: normal;
+    border-style: solid;
+    border-width: 1;
+    border-radius: 5;
+    padding: 4;
+}
+
+NautilusSearchBar .entry {
+}
+
+.nautilus-cluebar-label {
+    font: bold;
+}
+
+NautilusFloatingBar {
+    border-radius: 3 3 0 0;
+    border-width: 1;
+    border-style: solid;
+}
+
+NautilusWindow .sidebar .frame {
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@border_gradient_color_b, 1.25)),
+                                                 to (shade (@border_gradient_color_b, 1.25)));
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@border_gradient_color_b, 0.85)),
+                                           to (shade (@border_gradient_color_b, 0.85)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@inner_gradient_color_a, 1.10)),
+                                           to (shade (@inner_gradient_color_a, 1.10)));
+
+    -unico-inner-stroke-width: 1;
+    border-style: solid;
+    border-width: 1 0 0 0;
+    border-radius: 5;
+    padding: 2;
+}
+
+NautilusWindow > GtkTable > .pane-separator {
+    border-width: 1 1 0 0;
+    border-style: solid;
+    border-color: shade (@bg_color, 0.66);
+}
+
+
+/***********************
+ * Fallback Mode Panel *
+ ***********************/
+PanelApplet > GtkMenuBar.menubar,
+PanelApplet > GtkMenuBar.menubar.menuitem,
+PanelMenuBar.menubar,
+PanelMenuBar.menubar.menuitem,
+.gnome-panel-menu-bar,
+PanelToplevel,
+PanelWidget,
+PanelAppletFrame,
+PanelApplet {
+/*    background-image: url("assets/gtk-3.0-panel-background.png");*/
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (shade (@gradient_color_b, 1.15)));
+    -unico-outer-stroke-width: 0;
+    -unico-inner-stroke-width: 0;
+    border-width: 0;
+    border-radius: 0;
+}
+
+ClockBox,
+.gnome-panel-menu-bar {
+    border-width: 0;
+    font: bold;
+}
+
+.gnome-panel-menu-bar .menuitem:prelight {
+}
+
+.gnome-panel-menu-bar .menuitem *:prelight {
+    color: shade (@glow_color, 0.75);
+    text-shadow: 1 1 alpha (shade (@text_shadow_color, 1.25), 0.4);
+}
+
+PanelApplet .button,
+PanelApplet .button:prelight {
+    padding: 1;
+}
+
+PanelApplet .button:active:prelight,
+PanelApplet .button:active {
+    color: shade (@glow_color, 0.75);
+    text-shadow: 1 1 alpha (shade (@text_shadow_color, 1.25), 0.4);
+}
+
+PanelApplet *:prelight {
+    color: @glow_color;
+}
+
+PanelApplet *:active,
+PanelApplet *:prelight:active {
+    color: shade (@glow_color, 0.75);
+    text-shadow: 1 1 alpha (shade (@text_shadow_color, 1.25), 0.4);
+}
+
+NaTrayApplet {    
+    -NaTrayApplet-icon-padding: 1;
+    -NaTrayApplet-icon-size: 16;
+}
+
+WnckPager, WnckTasklist {
+    background-color: @gradient_color_a;
+    background-image: none;
+    color: shade (@gradient_color_b, 0.70);
+    border-radius: 0;
+    border-width: 1;
+    padding: 1;
+}
+
+GsmFailWhaleDialog {
+}
+
+GsmFailWhaleDialog * {
+}
+

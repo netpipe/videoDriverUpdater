@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=ADONE
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Menta
+MetacityTheme=BlackMATE
+IconTheme=Alpha-1
+GtkColorScheme=fg_color:#8e25ae43bb2a,bg_color:#2b5b2b5b2b5b,text_color:#6990c93bea66,base_color:#484248424842,selected_fg_color:#010100009f9f,selected_bg_color:#5c6cec8f088a,tooltip_fg_color:#000000000000,tooltip_bg_color:#ffffffffbfbf
+CursorTheme=mate
+CursorSize=24
+NotificationTheme=Coco

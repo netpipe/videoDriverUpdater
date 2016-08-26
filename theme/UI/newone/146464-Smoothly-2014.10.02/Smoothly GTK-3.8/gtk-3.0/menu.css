@@ -1,0 +1,112 @@
+/************
+ * Menubars *
+ ************/
+.menuitem {
+    padding: 2.5px 3px 2.5px 3px;
+}
+
+.menubar {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (@gradient_color_b));
+    border-color: alpha (@text_color, 0.00);
+    box-shadow: inset 2px 2px shade (@inner_gradient_color_a, 0.95),
+                inset -2px -2px shade (@inner_gradient_color_b, 1.00),
+                inset 1px 1px @border_gradient_color_a,
+                inset -1px -1px shade (@border_gradient_color_b, 0.80);
+    border-width: 1px;
+    border-style: none;
+    padding: 0px;
+    color: @text_color;
+    text-shadow: 1px 1px alpha (shade (@text_shadow_color, 1.25), 0.4);
+    -GtkWidget-window-dragging: true;
+    -GtkMenuBar-internal-padding: 2;
+}
+
+.menubar.menuitem:prelight {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_activ_color_a),
+                                     to (@gradient_activ_color_b));
+    border-color: alpha (@text_color, 0.00);
+    box-shadow: inset 2px 2px shade (@border_gradient_color_a, 0.60),
+                inset -2px -2px shade (@border_gradient_color_a, 1.10),
+                inset 1px 1px shade (@border_gradient_color_a, 0.90),
+                inset -1px -1px shade (@border_gradient_color_a, 0.75);
+    color: @text_color;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 0px;
+}
+
+.menubar .menuitem *:prelight {
+    color: shade (@glow_color, 0.75);
+}
+
+.menubar.menuitem {
+    border-width: 1px;
+    border-style: none;
+}
+
+.menu {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (@bg_color, 0.65)),
+                                     color-stop (0.12, shade (@bg_color, 0.92)),
+                                     color-stop (1.00, shade (@bg_color, 0.92)),
+                                     to (shade (@bg_color, 0.92)));
+    border-color: shade (@border_gradient_color_b, 1.25);
+    box-shadow: inset 2px 2px shade (@inner_gradient_color_a, 0.95),
+                inset -2px -2px shade (@inner_gradient_color_a, 1.05),
+                inset 1px 1px shade (@border_gradient_color_b, 0.85),
+                inset -1px -1px shade (@border_gradient_color_b, 0.85);
+    -GtkMenuItem-arrow-scaling: 0.4;
+    padding: 0px 3px 0px 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+}
+
+.menu *{
+    background-color: @transparent;
+}
+
+.menu.menuitem {
+    padding: 2px;
+}
+
+.menuitem.accelerator {
+    color: alpha (@base_color, 0.65);
+}
+
+.menuitem.accelerator:prelight,
+.menuitem.accelerator:active {
+    color: alpha (@base_color, 0.50);
+}
+
+.menuitem:insensitive {
+    color: alpha (@text_color, 0.40);
+}
+
+.menuitem:active,
+.menuitem:prelight {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (@gradient_color_b));
+    border-color: shade (@border_gradient_color_b, 0.80);
+    box-shadow: inset 1px 1px shade (@inner_gradient_color_a, 1.15),
+                inset -1px -1px shade (@inner_gradient_color_b, 1.00);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    color: shade (@text_color, 1.20);
+    text-shadow: 1px 1px alpha (shade (@text_shadow_color, 1.25), 0.4);
+    padding: 2.5px 3px 2.5px 3px;
+}
+
+.separator {
+    border-width: 1px;
+    border-style: solid;
+    border-image: none;
+    border-color: shade (@base_color, 0.50);
+    border-bottom-color: alpha (shade (@base_color, 1.25), 0.5);
+    border-right-color: alpha (shade (@base_color, 1.25), 0.5);
+}

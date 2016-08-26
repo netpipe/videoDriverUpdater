@@ -1,0 +1,77 @@
+/****************
+ * Text Entries *
+ ****************/
+.entry,
+.toolbar.entry {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@base_color, 0.60)),
+                                     color-stop (0.50, shade (@base_color, 0.95)),
+                                     color-stop (0.90, @base_color),
+                                     to (@base_color));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@border_gradient_color_b, 1.25)),
+                                                 to (shade (@border_gradient_color_b, 1.25)));
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@border_gradient_color_b, 0.85)),
+                                           color-stop (0.50, shade (@border_gradient_color_b, 0.94)),
+                                           color-stop (0.90, @border_gradient_color_b),
+                                           to (shade (@border_gradient_color_b, 0.85)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@inner_gradient_color_a, 1.00)),
+                                           color-stop (0.50, shade (@inner_gradient_color_a, 0.94)),
+                                           color-stop (0.90, @inner_gradient_color_a),
+                                           to (shade (@inner_gradient_color_a, 1.00)));
+
+    -unico-inner-stroke-width: 1;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px 6px 6px 6px;
+    padding: 5px;
+}
+
+.entry:focused {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@inner_gradient_color_a, 0.80)),
+                                     color-stop (0.50, shade (@base_color, 0.95)),
+                                     color-stop (0.90, @base_color),
+                                     to (@base_color));
+
+    -unico-outer-stroke-style: none;
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@glow_color, 1.45)),
+                                           to (shade (@glow_color, 1.45)));
+    
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@inner_gradient_color_a, 0.10)),
+                                                 to (alpha (@inner_gradient_color_a, 0.30)));
+    -unico-inner-stroke-style: solid;
+}
+
+.entry:selected {
+    color: @text_color;
+}
+
+.entry:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+			                         from (alpha (@base_color, 0.20)),
+			                         to (alpha (@base_color, 0.00)));
+}
+
+.entry.progressbar {
+    background-color: @glow_color;
+    color: @text_color;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+.entry.button {
+    background-color: @glow_color;
+    color: @text_color;
+    border-width: 1px;
+    border-radius: 1px;
+}

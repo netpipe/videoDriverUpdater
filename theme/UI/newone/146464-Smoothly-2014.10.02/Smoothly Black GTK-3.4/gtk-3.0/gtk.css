@@ -1,0 +1,48 @@
+/**************
+* Base colors *
+***************/
+@define-color r #FF0000;
+@define-color base_color-b #000000;
+@define-color text_color-b #E6E6E6;
+@define-color nautilus_desktop_text_color-b #ffffff;
+@define-color nautilus_desktop_text_shadow_color-b #000000;
+@define-color text_shadow_color-b #000003;
+@define-color bg_color-b #404040;
+@define-color bg_color-b- #FF0000;
+
+@define-color sidebar_text_color-b #FFFFFF;
+@define-color sidebar_text_shadow_color-b #000003;
+@define-color sidebar_bg_color-b #050505;
+
+/******************
+* Gradient colors *                                                                                                                                       
+*******************/
+@define-color gradient_color_a-b #636363;
+@define-color gradient_color_b-b #2B2B2B;
+@define-color border_gradient_color_a-b #424242;
+@define-color border_gradient_color_b-b #1F1F1F;
+@define-color inner_gradient_color_a-b #545454;
+@define-color inner_gradient_color_b-b #2B2B2B;
+
+@define-color gradient_activ_color_a-b #000000;
+@define-color gradient_activ_color_b-b #050505;
+
+@define-color glow_color-b #FFFFFF;
+@define-color transparent-b rgba (0, 0, 0, 0);
+
+/**************
+* Info colors *
+***************/
+@define-color link_color-b #6985FF;
+@define-color info_color-b #D5B052;
+@define-color warning_color-b #f57900;
+@define-color error_color-b #cc0000;
+@define-color question_color-b #62B5FF;
+
+@define-color info_bg_color-b #AD8F43;
+@define-color warning_bg_color-b #E06629;
+@define-color error_bg_color-b #B20000;
+@define-color question_bg_color-b #5297D5;
+
+
+@import url("gtk-widgets-dark.css");

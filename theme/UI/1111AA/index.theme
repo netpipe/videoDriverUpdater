@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=1111AA
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=MentaTecan
+MetacityTheme=MentaTecan
+IconTheme=Alpha-1
+GtkColorScheme=fg_color:#8686d3d3ffff,bg_color:#2f7c2f7c2f7c,text_color:#4949a7a7e3e3,base_color:#5f5f5f5f5f5f,selected_fg_color:#5e5effff0000,selected_bg_color:#010100009f9f,tooltip_fg_color:#010100009f9f,tooltip_bg_color:#f1f1ffff9191
+CursorTheme=mate
+CursorSize=24
+NotificationTheme=Coco

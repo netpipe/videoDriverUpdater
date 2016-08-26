@@ -1,0 +1,194 @@
+/************
+ * Toolbars *
+ ***********/
+.toolbar {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (@gradient_color_b));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@text_color, 0.00)),
+                                                 to (alpha (@text_color, 0.10)));
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (@border_gradient_color_a),
+                                           to (shade (@border_gradient_color_b, 0.80)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@inner_gradient_color_a, 0.95)),
+                                                 to (shade (@inner_gradient_color_b, 1.00)));
+    -unico-inner-stroke-width: 1;
+
+    -GtkWidget-window-dragging: true;
+    -GtkMenuBar-internal-padding: 5;
+    -GtkWidget-window-dragging: true;
+    border-width: 0;
+    border-style: none;
+    color: @text_color;
+    text-shadow: 1 1 alpha (shade (@text_shadow_color, 1.25), 0.4);
+    border-radius: 5px;
+}
+
+.toolbar .button {
+    padding: 2.5px 4px 2.5px 4px;
+}
+
+.toolbar .button:active {
+    padding: 2.5px 5px 2.5px 3px;
+}
+
+.toolbar:insensitive {
+    color: alpha (@text_color, 0.6);
+}
+
+/********************
+ * Menubar Toolbars *
+ ********************/
+.toolbar.menubar {
+    border-width: 1px;
+    border-style: solid;
+    -GtkToolbar-button-relief: normal;
+}
+
+/********************
+ * Primary Toolbars *
+ ********************/
+.primary-toolbar .button *,
+.primary-toolbar .button {
+    padding:1.9px 2.3px 1.5px 3px;
+}
+
+.primary-toolbar .button:active {
+    padding:1.9px 3.3px 1.5px 2px;
+}
+
+.primary-toolbar .toolbar,
+.primary-toolbar.toolbar {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (@gradient_color_b));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@text_color, 0.00)),
+                                                 to (alpha (@text_color, 0.10)));
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (@border_gradient_color_a),
+                                           to (shade (@border_gradient_color_b, 0.80)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@inner_gradient_color_a, 0.95)),
+                                                 to (shade (@inner_gradient_color_b, 1.00)));
+    -unico-inner-stroke-width: 1;
+    -GtkWidget-window-dragging: true;
+    -GtkMenuBar-internal-padding: 5;
+    -GtkWidget-window-dragging: true;
+    border-width: 0;
+    border-style: none;
+    padding: 0;
+    color: @text_color;
+    text-shadow: 1 1 alpha (shade (@text_shadow_color, 1.25), 0.4);
+    padding: 0px 0px 0px 0px;
+}
+
+.primary-toolbar .toolbar:insensitive,
+.primary-toolbar.toolbar:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_color_a, 1.10)),
+                                     to (shade (@gradient_color_b, 1.10)));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (@text_color, 0.10)),
+                                                 to (alpha (@text_color, 0.20)));
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@border_gradient_color_a, 1.10)),
+                                           to (shade (@border_gradient_color_b, 0.90)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@inner_gradient_color_a, 1.05)),
+                                                 to (shade (@inner_gradient_color_b, 1.10)));
+    -unico-inner-stroke-width: 1;
+    -GtkWidget-window-dragging: true;
+    -GtkMenuBar-internal-padding: 5;
+    -GtkWidget-window-dragging: true;
+    border-width: 0;
+    border-style: none;
+    padding: 0;
+    color: @text_color;
+    text-shadow: 1 1 alpha (shade (@text_shadow_color, 1.25), 0.4);
+}
+
+/*******************
+ * Inline toolbars *
+ *******************/
+.inline-toolbar.toolbar {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@bg_color, 0.85)),
+                                     color-stop (0.50, shade (@bg_color, 0.95)),
+                                     color-stop (1.00, @bg_color),
+                                     to (shade (@bg_color, 0.95)));
+
+    -unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@border_gradient_color_b, 1.25)),
+                                                 to (shade (@border_gradient_color_b, 1.25)));
+    -unico-outer-stroke-width: 1;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@border_gradient_color_b, 0.85)),
+                                           to (shade (@border_gradient_color_b, 0.85)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@inner_gradient_color_a, 1.00)),
+                                           to (shade (@inner_gradient_color_a, 1.10)));
+
+    -unico-inner-stroke-width: 1;
+    -GtkToolbar-button-relief: normal;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.inline-toolbar.toolbar .button {
+    padding: 3px;
+    icon-shadow: 1 1 @base_color;
+    border-style: solid;
+}
+
+.inline-toolbar.toolbar .button:active {
+    padding: 3px 4px 3px 2px;
+}
+
+.inline-toolbar.toolbar .button:hover {
+    -unico-outer-stroke-width: 0;
+}
+
+
+.inline-toolbar.toolbar .button:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (@gradient_color_b));
+
+    -unico-outer-stroke-style: none;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@border_gradient_color_a, 1.10)),
+                                           to (shade (@border_gradient_color_b, 0.90)));
+
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@inner_gradient_color_a, 1.25)),
+                                                 to (shade (@inner_gradient_color_b, 1.115)));
+    -unico-inner-stroke-width: 1;
+
+    -unico-inner-stroke-width: 0;
+    padding: 3px;
+}
+
+.inline-toolbar.toolbar .button *:insensitive {
+    icon-shadow: 1 1 shade (@border_gradient_color_a, 1.10);
+    color: shade (@border_gradient_color_a, 0.80);
+}

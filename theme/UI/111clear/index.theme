@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=111clear
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Shiny
+MetacityTheme=Shiny
+IconTheme=mate
+GtkColorScheme=fg_color:#0000a501dac3,bg_color:#37be37be37be,text_color:#af44d757e45a,base_color:#652965296529,selected_fg_color:#ffffffffffff,selected_bg_color:#55559898d7d7,tooltip_fg_color:#000000000000,tooltip_bg_color:#ffffffffbfbf
+CursorTheme=default
+CursorSize=18
+NotificationTheme=Coco

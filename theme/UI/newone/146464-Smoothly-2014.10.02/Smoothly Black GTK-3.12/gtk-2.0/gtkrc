@@ -1,0 +1,507 @@
+# Theme Name  : Smoothly Black
+
+gtk-icon-sizes = "mini-commander-icon=16,16:print-manager=16,16:panel-button=12,12:gtk-dnd=24,24:gtk-menu=16,16:panel-menu=16,16:gtk-large-toolbar=22,22:gtk-small-toolbar=16,16"
+
+
+style "default" {
+	GtkWidget::interior_focus 						= 0
+	GtkWidget::focus-line-pattern 					= ""
+	GtkWidget::focus_padding 						= 1
+
+	GtkButton::default_border         				= {0, 0, 0, 0}
+	GtkButton::default_outside_border 				= {0, 0, 0, 0}
+
+	GtkCheckButton::indicator_size					= 13
+	GtkRadioButton::indicator_size	 				= 12
+
+	GtkPaned::handle_size							= 10
+
+	GtkRange::trough_border		      				= 2
+	GtkRange::slider_width							= 13
+	GtkRange::stepper_size							= 13
+	GtkRange::stepper_spacing   		      		= 0
+
+ 
+	GtkScrollbar::has_backward_stepper 				= 1
+	GtkScrollbar::has_secondary_forward_stepper 	= 0
+
+	GtkScrollbar::has_forward_stepper 				= 1
+	GtkScrollbar::has_secondary_backward_stepper 	= 1
+
+	GtkSpinButton::shadow_type 						= etched-in
+
+    GtkWidget::link-color = "#00138C"
+    GtkWidget::visited-link-color = "#BD4DFF"
+
+	###  Nautilus Specific Style Flags  ###
+	NautilusIconContainer::selection_box_alpha  	= 64
+	NautilusIconContainer::highlight_alpha      	= 255
+	NautilusIconContainer::light_info_color     	= "#FFFFFF"
+	NautilusIconContainer::dark_info_color      	= "#5E5E5E"
+	NautilusIconContainer::frame_text       		= 0
+
+    ###### GTK Style Colours ######
+    fg[ACTIVE]          = "#FFFFFF" 
+    fg[NORMAL]          = "#E6E6E6" 
+    fg[SELECTED]        = "#FFFFFF" 
+    fg[PRELIGHT]        = "#FFFFFF" 
+    fg[INSENSITIVE]     = "#808080" 
+
+    bg[ACTIVE]          = "#7D7D7D" 
+    bg[SELECTED]        = "#808080" 
+    bg[NORMAL] 	        = "#5E5E5E" 
+    bg[PRELIGHT]        = "#878787" 
+    bg[INSENSITIVE]     = "#4C4C4C" 
+
+    base[ACTIVE]        = "#3B3B3B" 
+    base[SELECTED]      = "#808080" 
+    base[NORMAL]        = "#FFFFFF" 
+    base[PRELIGHT]      = "#808080" 
+    base[INSENSITIVE]   = "#5E5E5E" 
+
+    text[ACTIVE]        = "#FFFFFF" 
+    text[SELECTED]      = "#FFFFFF" 
+    text[NORMAL]        = "#000000" 
+    text[PRELIGHT]      = "#FFFFFF" 
+    text[INSENSITIVE]   = "#000000" 
+ 
+	xthickness=2
+	ythickness=1
+
+    engine "smooth" {
+        fill {
+		    style=shaded
+		    hdirection=vertical
+		    vdirection=vertical
+			color1[SELECTED]    = "#EAF5FF"
+			color2[SELECTED]    = "#166FD5"
+			color1[NORMAL]      = "#F8F8FB"
+			color2[NORMAL]      = "#CDCDDF"
+			color1[PRELIGHT]    = "#EAF5FF"
+			color2[PRELIGHT]    = "#166FD5"
+			color1[INSENSITIVE] = "#EEEEF3"
+			color2[INSENSITIVE] = "#C5C5D0"
+		}
+        line {
+	    	style=smooth
+	    	thickness=1
+		}
+		focus {
+			foreground[ACTIVE] 		= "#313131"
+			foreground[SELECTED] 	= "#313131"
+			foreground[NORMAL] 		= "#313131"
+			foreground[PRELIGHT] 	= "#313131"
+		}
+        grip {
+		    style=bars
+		    fill {
+	    	    style=solid
+	    	}
+		}
+        check {
+	    	style=clean
+			motif=FALSE
+	    	fill {
+#	        	style=shaded
+	        	style=solid
+				hdirection=fdiagonal
+				vdirection=fdiagonal
+	    	}
+		}
+		option {
+		    style=round
+	    	motif=true
+	    	fill {
+	        	style=shaded
+				hdirection=fdiagonal
+				vdirection=fdiagonal
+		    }
+		}
+
+		arrow {
+			style=cleanice
+#			style=wonderland
+			solid=TRUE
+        }
+#		tab_style=round
+	    tabs {
+			thickness=0
+            style   = round
+        }
+
+
+    }
+} 
+widget_class "*" style "default"
+
+
+
+style "toolbar" {
+	xthickness=1
+	ythickness=1
+
+    engine "smooth" {
+        line {
+	    	style=smooth
+	    	thickness=1
+		}
+	
+		fill {
+	    	style=shaded
+		}
+	
+		grip {
+	   		style=bars
+	    	toolbar_overlap=TRUE
+		}
+	}
+}
+widget_class "Nautilus*Sidebar.GtkTreeView"     style "toolbar"
+widget_class "*<GtkSeparatorMenuItem>*"         style "toolbar"
+widget_class "*<GtkSeparatorToolItem>"          style "toolbar"
+class "GtkSeparator"                            style "toolbar"
+
+
+
+style "menuitem" {
+    text[NORMAL]	= "#E6E6E6"
+    fg[INSENSITIVE] = "#000000"
+
+	xthickness=1
+	ythickness=1
+
+    engine "smooth" {
+        fill {
+	    	style=shaded
+	    	hdirection=vertical
+	    	vdirection=vertical
+        	color1[SELECTED]    = "#EAF5FF"
+        	color2[SELECTED]    = "#166FD5"
+        	color1[NORMAL]      = "#F8F8FB"
+        	color2[NORMAL]      = "#CDCDDF"
+        	color1[PRELIGHT]    = "#EAF5FF"
+        	color2[PRELIGHT]    = "#166FD5"
+        	color1[INSENSITIVE] = "#EEEEF3"
+        	color2[INSENSITIVE] = "#C5C5D0"
+		}
+	
+		line {
+	    	style=thin
+	    	thickness=1
+		}
+
+		edge {
+	    	line {
+	        	style=smooth
+				thickness=1
+	    	}
+		}
+	
+		check {
+	    	style=clean
+	    	line {
+	        	style=flat
+				thickness=1
+	    	}
+	    	fill {
+	        	style=solid
+	    	}
+		}
+	
+		option {
+	    	style=round
+	    	line {
+	        	style=none
+				thickness=0
+	    	}
+	    	fill {
+	        	style=solid
+	    	}
+		}
+	
+		arrow {
+			style=cleanice
+			solid=TRUE
+        }
+    }
+}
+widget_class "*MenuItem*" style "menuitem"
+class "*MenuItem*" style "menuitem"
+
+
+
+style "scrollbar" {
+	xthickness=1
+	ythickness=1
+
+    engine "smooth" {
+        fill {
+	    	style=shaded
+	    	hdirection=vertical
+	    	vdirection=horizontal
+	       	color1[SELECTED]    = "#EAF5FF"
+        	color2[SELECTED]    = "#166FD5"
+        	color1[NORMAL]      = "#F8F8FB"
+        	color2[NORMAL]      = "#CDCDDF"
+        	color1[PRELIGHT]    = "#EAF5FF"
+        	color2[PRELIGHT]    = "#166FD5"
+        	color1[INSENSITIVE] = "#EEEEF3"
+        	color2[INSENSITIVE] = "#C5C5D0"
+		}
+	
+		line {
+	    	style=smooth
+	    	thickness=1
+		}
+	
+		grip {
+	    	style=midlines
+	    	count=3
+	    	spacing=1
+		}
+	
+		arrow {
+        	style=cleanice
+	   		solid=TRUE
+        }
+    }
+}
+widget_class "*Scrollbar*" style "scrollbar"
+class "*Scrollbar*" style "scrollbar"
+
+
+
+style "scales"  {
+    GtkRange::trough_border = 2
+    GtkRange::slider-width  = 13
+    GtkScale::slider-length = 29
+    bg[ACTIVE]          = "#666666" 
+    bg[SELECTED]        = "#808080" 
+
+    engine "smooth" {
+        real_sliders = FALSE
+
+        fill {
+            style       = shaded
+            hdirection  = vertical
+            vdirection  = horizontal
+            shade1      = 1.09
+            shade2      = 0.9
+        }
+
+            line {
+            style       = smooth
+            thickness   = 2
+        }
+
+        trough {
+            xpadding    = 3
+            ypadding    = 3
+            show_value  = TRUE
+        }
+
+        grip {
+            style       = dots_in
+            count       = 1
+            spacing     = 2
+            xpadding    = 0
+            ypadding    = 0
+        }
+    }
+} 
+widget_class "*Scale*" style "scales"
+class "*Scale*" style "scales"
+
+
+
+style "infobar" {
+    xthickness=1
+    ythickness=1
+    
+    engine "smooth" {
+        line {
+	    	style=smooth
+	    	thickness=2
+		}
+	
+		fill {
+	    	style=shaded
+	    	hdirection=vertical
+	    	vdirection=horizontal
+        	color1[SELECTED]    = "#EAF5FF"
+        	color2[SELECTED]    = "#166FD5"
+        	color1[NORMAL]      = "#F8F8FB"
+        	color2[NORMAL]      = "#CDCDDF"
+        	color1[PRELIGHT]    = "#EAF5FF"
+        	color2[PRELIGHT]    = "#166FD5"
+        	color1[INSENSITIVE] = "#EEEEF3"
+        	color2[INSENSITIVE] = "#C5C5D0"
+		}
+	
+		trough {
+	    	fill {
+	        	style=solid
+	    	}
+		}
+    }
+}
+class "*Progress*" style "infobar"
+widget_class "*Progress*" style "infobar"
+
+style "panel-text" {
+    text[NORMAL]          = "#E6E6E6"
+    base[ACTIVE]          = "#7D7D7D"
+    base[SELECTED]        = "#808080"
+    base[NORMAL]          = "#5E5E5E"
+    base[PRELIGHT]        = "#808080"
+    base[INSENSITIVE]     = "#777777"
+    fg[ACTIVE]          = "#BFBFBF"
+}
+
+
+
+style "panel" {
+    text[NORMAL]          = "#BFBFBF"
+    base[ACTIVE]          = "#7D7D7D"
+    base[SELECTED]        = "#808080"
+    base[NORMAL]          = "#5E5E5E"
+    base[PRELIGHT]        = "#808080"
+    base[INSENSITIVE]     = "#777777"
+    fg[ACTIVE]          = "#BFBFBF"
+
+    bg_pixmap[ACTIVE] = "assets/gtk-2.0-panel-background.png"
+    bg_pixmap[NORMAL] = "assets/gtk-2.0-panel-background.png"
+    bg_pixmap[SELECTED] = "assets/gtk-2.0-panel-background.png"
+    bg_pixmap[PRELIGHT] = "assets/gtk-2.0-panel-background.png"
+    bg_pixmap[INSENSITIVE] = "assets/gtk-2.0-panel-background.png"
+
+    engine "pixmap" { }
+	xthickness=1
+	ythickness=1
+}
+widget "*PanelWidget*" style "panel"
+widget "*PanelApplet*" style "panel"
+class "*Tray*" style "panel"
+class "*tray*" style "panel"
+class "*Panel*" style "panel"
+widget "*Xfce*Panel*" style "panel"
+class "*Xfce*Panel*" style "panel"
+
+
+
+style "notebook"        = "default" {
+    fg[ACTIVE]          = "#A6A6A6"
+#	bg[NORMAL]          = "#6B6B6B"
+	xthickness          = 0
+	ythickness          = 0
+
+	engine "pixmap" {
+      image
+        {
+            function = EXTENSION
+			recolorable = TRUE
+            state = NORMAL
+            #gap_side = RIGHT
+            file = "assets/a_tab-select.png"
+            border = {6,6,9,9}
+            stretch = TRUE
+        }
+      image
+        {
+            function = EXTENSION
+            recolorable = TRUE
+			state = ACTIVE
+            #gap_side = LEFT
+            file = "assets/a_tab.png"
+            border = {6,6,9,9}
+            stretch = TRUE
+        }
+	}
+}
+widget_class "*<GtkNotebook>"               		style "notebook"
+widget_class "*<GtkNotebook>*<GtkEventBox>"         style "notebook"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"      style "notebook"
+widget_class "*<GtkNotebook>*<GtkLayout>"           style "notebook"
+widget_class "*<GtkNotebook>*<GtkLabel>"        	style "notebook"
+
+
+
+style "metacity-frame" {
+	xthickness=1
+	ythickness=1
+
+    ###### GTK Style Colours ######
+    bg[SELECTED]        = "#99CCFF"
+
+    ###### Theme Engine Style ######
+    engine "smooth" {
+        fill {
+            style       = gradient
+            hdirection  = vertical
+            vdirection  = horizontal
+
+            color1[SELECTED]    = "#EAF5FF"
+            color2[SELECTED]    = "#166FD5"
+            color1[NORMAL]      = "#F8F8FB"
+            color2[NORMAL]      = "#CDCDDF"
+            color1[PRELIGHT]    = "#EAF5FF"
+            color2[PRELIGHT]    = "#166FD5"
+            color1[INSENSITIVE] = "#EEEEF3"
+            color2[INSENSITIVE] = "#C5C5D0"
+        }
+
+        line {
+            style       = smooth
+            thickness   = 2
+        }
+    }
+}
+class "MetaFrames" style "metacity-frame"
+widget_class "MetaFrames" style "metacity-frame"
+
+
+
+style "notification-magic" {
+    base[NORMAL]        = "#4A4A4A"
+}
+widget "*GtkEventBox.GtkV*" style "notification-magic"
+
+
+
+style "radio_check" {
+    fg[ACTIVE]      = "#E6E6E6" 
+    fg[NORMAL]      = "#999999" 
+    text[PRELIGHT]  = "#FFFFFF"
+    text[NORMAL]    = "#000000"
+}
+widget_class "*RadioButton*" style "radio_check"
+widget_class "*CheckButton*" style "radio_check"
+
+
+style "combo" {
+    text[NORMAL]    = "#E6E6E6"
+    text[SELECTED]  = "#E6E6E6"
+}
+widget_class "*.GtkComboBox.*" style "combo"
+widget_class "EShellWindow.Gtk*Combo*" style "combo"
+widget_class "*.<GtkComboBox>.<GtkCellView>" style "combo"
+
+
+
+style "list-header" {
+    fg[NORMAL]          = "#000000"
+}
+widget_class "*List" style "list-header"
+widget_class "*GtkTree.*" style "list-header"
+widget_class "*Tree" style "list-header"
+
+
+
+style "fix-combo" {
+    fg[NORMAL]        = "#000000"
+}
+widget_class "*<GtkListItem>*" style "fix-combo"
+widget_class "*<GtkCList>" style "fix-combo"
+widget_class "*<EelEditableLabel>" style "fix-combo"
+
+widget_class "*.GtkTreeView" style "fix-combo"

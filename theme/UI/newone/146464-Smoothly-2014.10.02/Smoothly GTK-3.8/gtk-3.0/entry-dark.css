@@ -1,0 +1,62 @@
+/****************
+ * Text Entries *
+ ****************/
+.entry,
+.toolbar.entry {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px 10px 6px 10px;
+    padding: 5px;
+    color: @base_color-b;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@text_color-b, 0.60)),
+                                     color-stop (0.50, shade (@text_color-b, 0.95)),
+                                     color-stop (0.90, @text_color-b),
+                                     to (@text_color-b));
+    border-color: shade (@border_gradient_color_a-b, 0.80);
+    box-shadow: inset 2px 2px shade (@inner_gradient_color_a-b, 1.00),
+                inset -2px -2px shade (@inner_gradient_color_a-b, 1.00),
+                inset 1px 1px shade (@border_gradient_color_b-b, 0.85),
+                inset -1px -1px shade (@border_gradient_color_b-b, 0.85);
+}
+
+.entry:focused {
+    border-radius: 6px;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@inner_gradient_color_a-b, 0.80)),
+                                     color-stop (0.50, shade (@text_color-b, 0.95)),
+                                     color-stop (0.90, @text_color-b),
+                                     to (@text_color-b));
+    border-color: shade (@glow_color-b, 0.60);
+    box-shadow: inset 1px 1px alpha (@inner_gradient_color_a-b, 0.10),
+                inset -1px -1px alpha (@inner_gradient_color_a-b, 0.30);
+}
+
+.entry:active {
+    background-color: shade (@bg_color-b, 1.00);
+}
+
+.entry:selected {
+    color: @text_color-b;
+}
+
+.entry:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+			                         from (alpha (@text_color-b, 0.20)),
+			                         to (alpha (@text_color-b, 0.00)));
+}
+
+.primary-toolbar .entry.progressbar,
+.entry.progressbar {
+    background-color: @glow_color-b;
+    color: @text_color-b;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+.entry.button {
+    background-color: @glow_color-b;
+    color: @text_color-b;
+    border-width: 1px;
+    border-radius: 1px;
+}

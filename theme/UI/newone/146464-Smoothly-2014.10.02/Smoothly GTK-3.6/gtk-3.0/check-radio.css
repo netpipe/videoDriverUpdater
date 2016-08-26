@@ -1,0 +1,176 @@
+/*************************
+ * Check and Radio items *
+ *************************/
+.cell.check,
+.menuitem.check,
+* .check {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (@gradient_color_b));
+    box-shadow: inset 2px 2px shade (@inner_gradient_color_a, 1.15),
+                inset -2px -2px shade (@inner_gradient_color_b, 1.00),
+                inset 1px 1px @border_gradient_color_a,
+                inset -1px -1px shade (@border_gradient_color_b, 0.80);
+    border-radius: 3px;
+}
+
+.view.cell.radio:focused,
+.view.cell.radio,
+.cell.radio,
+.menuitem.radio,
+* .radio {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (@gradient_color_a),
+                                     to (@gradient_color_b));
+    box-shadow: inset 1px 0.2px shade (@border_gradient_color_b, 0.85),
+                inset -1px -0.2px shade (@border_gradient_color_b, 0.85);
+    border-radius: 8px;
+}
+
+
+.view.cell.radio:focused,
+.view.cell.radio:prelight,
+.view.cell.radio:active {
+    border-radius: 8px;
+}
+
+.cell.check:active,
+.cell.check:active:selected,
+.menuitem.check:active,
+* .check:active {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@base_color, 0.70)),
+                                     color-stop (0.50, shade (@base_color, 0.95)),
+                                     color-stop (0.90, @base_color),
+                                     to (@base_color));
+    box-shadow: inset 2px 2px shade (@inner_gradient_color_a, 1.00),
+                inset -2px -2px shade (@inner_gradient_color_a, 1.00),
+                inset 1px 1px shade (@border_gradient_color_b, 0.85),
+                inset -1px -1px shade (@border_gradient_color_b, 0.85);
+}
+
+.cell.radio:active,
+.cell.radio:active:selected,
+.menuitem.radio:active,
+* .radio:active {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@base_color, 0.70)),
+                                     color-stop (0.50, shade (@base_color, 0.95)),
+                                     color-stop (0.90, @base_color),
+                                     to (@base_color));
+    box-shadow: inset 1.2px 0.2px shade (@border_gradient_color_b, 0.75),
+                inset -1.2px -0.2px shade (@border_gradient_color_b, 0.75);
+}
+
+.cell.check:inconsistent,
+.cell.check:inconsistent:selected,
+.menuitem.check:inconsistent,
+* .check:inconsistent {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@base_color, 0.60)),
+                                     color-stop (0.50, shade (@base_color, 1.95)),
+                                     to (shade (@base_color, 0.60)));
+    box-shadow: inset 1.2px 0.2px shade (@border_gradient_color_b, 0.85),
+                inset -1.2px -0.2px shade (@border_gradient_color_b, 0.85);
+
+}
+
+.cell.radio:inconsistent,
+.cell.radio:inconsistent:selected,
+.menuitem.radio:inconsistent,
+* .radio:inconsistent {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@base_color, 0.60)),
+                                     color-stop (0.50, shade (@base_color, 1.95)),
+                                     to (shade (@base_color, 0.60)));
+    box-shadow: inset 1px 0.2px shade (@border_gradient_color_b, 0.85),
+                inset -1px -0.2px shade (@border_gradient_color_b, 0.85);
+}
+
+.cell.check:insensitive,
+.menuitem.check:insensitive,
+* .check:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_color_a, 0.95)),
+                                     to (shade (@gradient_color_b, 1.10)));
+    box-shadow: inset 2px 2px shade (@inner_gradient_color_a, 1.05),
+                inset -2px -2px shade (@inner_gradient_color_b, 1.15),
+                inset 1px 1px shade (@border_gradient_color_a, 1.05),
+                inset -1px -1px shade (@border_gradient_color_b, 1.20);
+}
+
+.cell.radio:insensitive,
+.menuitem.radio:insensitive,
+* .radio:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_color_a, 0.95)),
+                                     to (shade (@gradient_color_b, 1.10)));
+    box-shadow: inset 1px 0.2px shade (@border_gradient_color_b, 0.85),
+                inset -1px -0.2px shade (@border_gradient_color_b, 0.85);
+}
+
+.cell.check:active:insensitive,
+.menuitem.check:active:insensitive,
+* .check:active:insensitive {
+   background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_activ_color_b, 1.20)),
+                                     to (@gradient_activ_color_a));
+    box-shadow: inset 2px 2px shade (@inner_gradient_color_a, 1.05),
+                inset -2px -2px shade (@inner_gradient_color_b, 1.15),
+                inset 1px 1px shade (@border_gradient_color_a, 1.05),
+                inset -1px -1px shade (@border_gradient_color_b, 1.20);
+}
+
+.cell.radio:active:insensitive,
+.menuitem.radio:active:insensitive,
+* .radio:active:insensitive {
+   background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_activ_color_b, 1.20)),
+                                     to (@gradient_activ_color_a));
+    box-shadow: inset 1px 0.2px shade (@border_gradient_color_b, 0.85),
+                inset -1px -0.2px shade (@border_gradient_color_b, 0.85);
+}
+
+.cell.check:inconsistent:insensitive,
+.menuitem.check:inconsistent:insensitive,
+* .check:inconsistent:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@base_color, 0.80)),
+                                     color-stop (0.50, shade (@base_color, 1.95)),
+                                     to (shade (@base_color, 0.80)));
+    box-shadow: inset 2px 2px shade (@inner_gradient_color_a, 1.05),
+                inset -2px -2px shade (@inner_gradient_color_b, 1.15),
+                inset 1px 1px shade (@border_gradient_color_a, 1.05),
+                inset -1px -1px shade (@border_gradient_color_b, 1.20);
+}
+
+.cell.radio:inconsistent:insensitive,
+.menuitem.radio:inconsistent:insensitive,
+* .radio:inconsistent:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@base_color, 0.80)),
+                                     color-stop (0.50, shade (@base_color, 1.95)),
+                                     to (shade (@base_color, 0.80)));
+
+    box-shadow: inset 1px 0.2px shade (@border_gradient_color_b, 0.85),
+                inset -1px -0.2px shade (@border_gradient_color_b, 0.85);
+}
+
+GtkExpander:hover,
+GtkCheckButton:hover {
+    border-radius: 3px;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_color_a, 1.85)),
+                                     to (shade (@gradient_color_a, 0.55)));
+}
+
+GtkRadioButton:hover {
+    border-radius: 8px;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@gradient_color_a, 1.85)),
+                                     to (shade (@gradient_color_a, 0.55)));
+}
+
+.toolbar GtkRadioButton:hover {
+    border-radius: 4px 7px 4px 7px;
+}

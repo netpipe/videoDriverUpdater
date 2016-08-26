@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Menta-Tecan
+Comment=A clean dark theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=Menta-Tecan
+Type=X-GNOME-Metatheme
+Comment=A clean dark theme
+Encoding=UTF-8
+GtkTheme=Menta-Tecan
+MetacityTheme=BlackMATE
+IconTheme=mate
+CursorTheme=mate
+CursorSize=24
+NotificationTheme=Coco
+

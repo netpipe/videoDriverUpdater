@@ -1,3 +1,5 @@
 #!/bin/bash
+
+#this file gets the 5.1 surround sound working 
 aj-snapshot -r ~/abin/jack/aj.xml
 
