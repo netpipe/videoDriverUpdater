@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=blueMenta-custom
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=BlueMenta
+MetacityTheme=BlueMenta
+IconTheme=Alpha-1
+GtkColorScheme=bg_color_dark:#3f3f3f,text_color_dark:#FFF
+CursorTheme=mate
+CursorSize=18
