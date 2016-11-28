@@ -1,0 +1,13 @@
+#!/bin/bash
+#su - weby -c xchat
+user = tecan
+password = remote12
+#expect -c 'spawn su - weby -c xchat;expect "Password: ";send "remote12\r";interact'
+#expect -c 'spawn su - wine -c winecfg;expect "Password: ";send "remote12\r";interact'
+#expect -c 'spawn su - tecan -c "wine explorer";expect "Password: ";send "remote12\r";interact'
+expect -c "spawn su - $user -c \"killall winedevice.exe frontend.exe plugplay.exe services.exe wineserver explorer.exe winemenubuilder\";expect \"Password: \";send \"$password\r\";interact"
+
+
+expect -c "spawn su - $user -c \"wine /home/tecan/.wine/drive_c/PortableApps/PortableApps.com/PortableAppsPlatform.exe\";expect \"Password: \";send \"$password\r\";interact"
+
+

@@ -1,2 +1,9 @@
-cpus=$(nproc)
-for ((i=0;i<$cpus;i++)); do cpupower --cpu $i frequency-set -f 2.4GHz ; done
+#!/bin/bash
+#Tecan
+#Description:
+
+for ((i=0;i<6;i++)); do sudo cpufreq-set --cpu $i --max 800MHz --governor powersave; done
+
+
+#cpus=$(nproc)
+#for ((i=0;i<$cpus;i++)); do cpupower --cpu $i frequency-set -f 2.4GHz ; done

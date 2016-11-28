@@ -1,0 +1,19 @@
+#!/bin/bash
+#tecan
+#usage : put inside /usr/local/bin and link with systemd user script
+
+sleep 5
+pulseaudio -k
+sleep 2
+aj-snapshot -r ~/abin/jack/aj.xml
+
+#killall mate-volume-control-applet -9
+#mate-volume-control-applet
+
+
+#mode 2 
+
+#killall pulseaudio -9
+#pulseaudio -D
+#sleep 2
+#aj-snapshot -r ~/jack/aj.xml

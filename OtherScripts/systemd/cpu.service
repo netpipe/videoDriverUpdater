@@ -1,0 +1,22 @@
+
+[Unit]
+Description=CPUSET
+
+[Service]
+Type=oneshot
+
+#TimeoutStartSec=300
+#ExecStart=/etc/udev/rules.d/obsolete/liquid.sh
+
+#ExecStartPre=/usr/local/bin/kuhlerd
+#RemainAfterExit=no
+
+ExecStart=/usr/local/bin/initCPUFREQ
+#/usr/local/bin/kuhler_ctl -s 28 -f 40 -m 2
+#ExecStop='/usr/local/bin/kuhler_ctl -s 28 -f 40 -m 2'
+
+[Install]
+WantedBy=multi-user.target
+
+#for ((i=0;i<6;i++)); do sudo cpufreq-set --cpu $i --max 800MHz --governor powersave; done
+#for ((i=0;i<6;i++)); do cpupower --cpu $i frequency-set -f 2.4GHz ; done

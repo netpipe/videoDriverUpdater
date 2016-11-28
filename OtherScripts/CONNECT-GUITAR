@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#guitar mode :)
+# todo
+#if config is inplace or -config param $1
+#aj-snapshot -j orig.xml
+#setup system connections with qjackctl then do a snapshot aj-snapshot -j guitar.xml
+
+
+/usr/bin/jackd -r -p512 -dalsa -r44100 -p1024 -n2 -D -Chw:Adapter -Phw:Device,0 -s & sleep 2 &
+#aj-snapshot -r ~/abin/jack/guitar.xml & read in & aj-snapshot -r ~/abin/jack/guitar2.xml -x
+
+aj-snapshot -r ~/abin/jack/guitar3.xml & read in && aj-snapshot -x -r ~/abin/jack/orig.xml && pkill jackd -9
+
+audioFix
+

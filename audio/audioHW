@@ -1,6 +1,9 @@
-put the folders into .pulse for the users
+put the folders into place as .pulse for the main and internet user
 
 
 works awesome with the usb 5.1 surround put udev rules for audio into /etc/udev/rules
 
 https://www.google.com/search?q=usb+5.1+audio+blue&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwjU39DK7qjOAhVk3IMKHfDhAQMQsAQIHQ
+
+cp publicUser-akaweby/* /home/user/weby/.pulse
+cp mainUser/* ~/.pulse

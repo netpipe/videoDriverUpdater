@@ -1,0 +1,2 @@
+#!/bin/bash
+killall winedevice.exe frontend.exe plugplay.exe services.exe wineserver explorer.exe winemenubuilder
