@@ -1,0 +1,6 @@
+#!/bin/bash
+#Tecan
+#Description:
+
+
+w -h | cut -d " " -f 1
