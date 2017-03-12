@@ -1,0 +1,23 @@
+#!/bin/bash
+#Tecan
+#Description: window positioner
+
+xwininfo
+
+wmctrl
+wmctrl -lp 
+#to one screen
+
+# auto switching between the monitor/workspace with most windows in it also turning off screens with mouse+keyboard/gesture
+# wmctrl -r :ACTIVE: -e 0,-1,-1,1280,900
+#wmctrl -R :ACTIVE: -e 0,-1,-1,1280,900
+
+
+
+while ;  #check list of pi
+do
+
+
+done
+
+

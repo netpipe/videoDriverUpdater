@@ -1,0 +1,27 @@
+#!/bin/bash
+#Tecan
+#Description: compiz toggle 
+
+#possibly set the dconf-edtior settings
+
+#nohup
+#ps -C
+
+
+if pidof marco | grep [0-9] > /dev/null
+then
+    echo "Switching to Compiz"
+	nohup compiz --replace &
+#	read in
+	sleep 1
+	#compiz --replace
+	#killall /usr/bin/gtk-window-decorator
+else
+    echo "Switching to Marco"
+	#nohup openbox-lxde --replace &
+	nohup marco --replace &
+#	read in
+	sleep 1
+fi
+#	/usr/bin/gtk-window-decorator
+

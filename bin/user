@@ -1,6 +1,11 @@
 #!/bin/bash
 #Tecan
 #Description:
+#
 
 
-w -h | cut -d " " -f 1
+whoami
+#id -un
+#w -h | cut -d " " -f 1
+#who
+#cd ./~;echo $(pwd) | cut -f 3 -d "/"

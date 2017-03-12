@@ -1,0 +1,25 @@
+#!/bin/bash
+#Tecan
+#Description: auto  /   caja script autokey script   /autogend daemon for  unconfigured directorys in caja through dbus
+
+./autogen.sh
+
+aclocal
+autoreconf -i 
+libtoolize -i
+automake --add-missing
+./configure
+make -j5 
+
+#w -h | cut -d " " -f 1
+#cd ./~;echo $(pwd) | cut -f 3 -d "/"
+
+#cleaning options
+
+
+#if ($in==install)
+#sudo make install
+
+
+# aclocal && autoreconf -i && libtoolize -i && automake --add-missing && ./configure && make -j5 
+
