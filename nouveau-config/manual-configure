@@ -1,0 +1,4 @@
+suggested way to configure dual monitors on linux
+
+edit ~/.config to match   i had issues with mate-display-properties configuring the monitors properly so i aligned them close and edited the file myself. works great for full screen windows just ctrl+5 them with pywo.
+works great for codeblocks.

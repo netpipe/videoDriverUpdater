@@ -1,0 +1,11 @@
+#!/bin/bash
+#Tecan
+#Description: add to /usr/local/bin and use
+
+aclocal
+automake
+autoconf
+libtoolize -i
+automake --add-missing
+./configure
+$make

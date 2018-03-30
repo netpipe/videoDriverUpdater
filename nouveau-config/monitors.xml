@@ -1,0 +1,66 @@
+<monitors version="1">
+  <configuration>
+      <clone>no</clone>
+      <output name="DVI-I-1">
+          <vendor>GSM</vendor>
+          <product>0x0000</product>
+          <serial>0x000000cd</serial>
+          <width>1080</width>
+          <height>1920</height>
+          <rate>60</rate>
+          <x>0</x>
+          <y>0</y>
+          <rotation>right</rotation>
+          <reflect_x>no</reflect_x>
+          <reflect_y>no</reflect_y>
+          <primary>yes</primary>
+      </output>
+      <output name="HDMI-0">
+          <vendor>ACR</vendor>
+          <product>0x0000</product>
+          <serial>0x00000000</serial>
+          <width>1080</width>
+          <height>1920</height>
+          <rate>60</rate>
+          <x>1920</x>
+          <y>0</y>
+          <rotation>right</rotation>
+          <reflect_x>no</reflect_x>
+          <reflect_y>no</reflect_y>
+          <primary>no</primary>
+      </output>
+  </configuration>
+  <configuration>
+      <clone>no</clone>
+      <output name="HDMI-1">
+          <vendor>ACR</vendor>
+          <product>0x00a0</product>
+          <serial>0x92008b8d</serial>
+          <width>1920</width>
+          <height>1080</height>
+          <rate>60</rate>
+          <x>1080</x>
+          <y>0</y>
+          <rotation>right</rotation>
+          <reflect_x>no</reflect_x>
+          <reflect_y>no</reflect_y>
+          <primary>no</primary>
+      </output>
+      <output name="VGA-1">
+      </output>
+      <output name="DVI-I-1">
+          <vendor>GSM</vendor>
+          <product>0x58bf</product>
+          <serial>0x0003bdc7</serial>
+          <width>1920</width>
+          <height>1080</height>
+          <rate>60</rate>
+          <x>0</x>
+          <y>0</y>
+          <rotation>right</rotation>
+          <reflect_x>no</reflect_x>
+          <reflect_y>no</reflect_y>
+          <primary>yes</primary>
+      </output>
+  </configuration>
+</monitors>
