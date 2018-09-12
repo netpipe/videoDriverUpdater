@@ -11,6 +11,8 @@ PDIR=${0%`basename $0`}
 LCK_FILE=`basename $0`.lck
 
 if [ -d "./rip" ]; then
+echo "directory exists"
+else
 mkdir ./rip
 mkdir ./rip/handbraketmp/
 fi
