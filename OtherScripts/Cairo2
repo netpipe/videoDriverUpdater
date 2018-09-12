@@ -7,6 +7,6 @@ sleep 20
 DISPLAY=$(cat ~/display)
 echo $DISPLAY
 export DISPLAY=$DISPLAY
-/usr/local/bin/cairo-dock
+/usr/bin/cairo-dock
 #pkill cairo-dock;
 #sleep 10

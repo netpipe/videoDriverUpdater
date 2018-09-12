@@ -4,8 +4,10 @@
 
 aclocal
 automake
+autoreconf
 autoconf
 libtoolize -i
 automake --add-missing
 ./configure
+
 $make
