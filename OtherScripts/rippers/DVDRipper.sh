@@ -11,13 +11,14 @@ PDIR=${0%`basename $0`}
 LCK_FILE=`basename $0`.lck
 
 if [ -d "./rip" ]; then
-echo "directory exists"
+    echo "directory exists"
 else
-mkdir ./rip
-mkdir ./rip/handbraketmp/
+    mkdir ./rip
+    mkdir ./rip/handbraketmp/
 fi
 tempFolder="/tmp"
 drive="/dev/sr1"
+size=720 #920, 1080
 # ------------------------------------------------------------
 # Am I Running
 # ------------------------------------------------------------
@@ -82,8 +83,8 @@ then
                 #cpulimit -l80
                 #./HandBrakeCLI -C1 -i /dev/sr1 -o $OUTPUT -t $counter -e x264  -q 0.4 -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --cpu 4 --decomb -4 -X 960 --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0
 
-                cpulimit -l110 -- HandBrakeCLI -C1 -i $drive -o $OUTPUT -t $counter -e x264  -q 20 -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X 720 --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0
-
+#ultrafast, superfast, veryfast, faster, fast, medium to slow, slower and veryslow
+                cpulimit -l110 -- HandBrakeCLI -C1 -i $drive -o $OUTPUT -t $counter -e x264  -q 20 -preset:v ultrafast --x264-tune fastdecode -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X $size --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0
 
                 #cpulimit -l180 -- HandBrakeCLI -C1 -i $drive -o $OUTPUT -t $counter -e x264  -q 20 -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X 720 --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0
 
