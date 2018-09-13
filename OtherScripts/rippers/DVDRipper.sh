@@ -15,7 +15,7 @@ tempFolder="/tmp"
 drive="/dev/sr1"
 output="./rips"
 size=720 #920, 1080
-threads=3
+threads=5
 
 if [ -d $output ]; then
     echo "directory exists"
@@ -44,7 +44,7 @@ if [ -f "${LCK_FILE}" ]; then
     exit 0
   fi
 else
-  echo "Start autoripper @" >> ./rip/autorip.log
+  echo "Start autoripper @" >> $output/autorip.log
    date >> $output/autorip.log
   echo $$ > "${LCK_FILE}"
 fi
@@ -90,7 +90,7 @@ then
 
 #ultrafast, superfast, veryfast, faster, fast, medium to slow, slower and veryslow
 #cpulimit -c5 
-                HandBrakeCLI -C1 -i $drive -o $COPYTO -t $counter -e x264  -q 20 --x264-preset ultrafast --x264-tune fastdecode -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X $size --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0 --nlmeans=threads=$threads
+                HandBrakeCLI -C1 -i $drive -o $COPYTO -t $counter -e x264  -q 20 --x264-preset ultrafast --x264-tune fastdecode -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X $size --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0 #--nlmeans=threads=$threads
 
                 #cpulimit -l180 -- HandBrakeCLI -C1 -i $drive -o $OUTPUT -t $counter -e x264  -q 20 -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X 720 --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0
 
