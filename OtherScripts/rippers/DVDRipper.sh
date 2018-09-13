@@ -19,8 +19,8 @@ size=720 #920, 1080
 if [ -d $output ]; then
     echo "directory exists"
 else
-    mkdir ./rips
-    mkdir ./rips/handbraketmp/
+    mkdir $output
+ #   mkdir $output/handbraketmp/
 fi
 
 # ------------------------------------------------------------
@@ -44,7 +44,7 @@ if [ -f "${LCK_FILE}" ]; then
   fi
 else
   echo "Start autoripper @" >> ./rip/autorip.log
-   date >> ./rip/autorip.log
+   date >> $output/autorip.log
   echo $$ > "${LCK_FILE}"
 fi
 # ------------------------------------------------------------
