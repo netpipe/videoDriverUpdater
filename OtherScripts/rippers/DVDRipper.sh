@@ -10,15 +10,19 @@
 PDIR=${0%`basename $0`}
 LCK_FILE=`basename $0`.lck
 
-if [ -d "./rip" ]; then
-    echo "directory exists"
-else
-    mkdir ./rip
-    mkdir ./rip/handbraketmp/
-fi
+
 tempFolder="/tmp"
 drive="/dev/sr1"
+output="./rips"
 size=720 #920, 1080
+
+if [ -d $output ]; then
+    echo "directory exists"
+else
+    mkdir ./rips
+    mkdir ./rips/handbraketmp/
+fi
+
 # ------------------------------------------------------------
 # Am I Running
 # ------------------------------------------------------------
@@ -30,11 +34,11 @@ if [ -f "${LCK_FILE}" ]; then
   if [ -z "${TEST_RUNNING}" ]; then
     # The process is not running
     # Echo current PID into lock file
-    echo "Start autoripper @" >> ./rip/autorip.log
-   date >> ./rip/autorip.log
+    echo "Start autoripper @" >> $output/autorip.log
+   date >> $output/autorip.log
     echo $$ > "${LCK_FILE}"
   else
-    echo "`basename $0` is already running [${MYPID}]" >> ./rip/autorip.log
+    echo "`basename $0` is already running [${MYPID}]" >> $output/autorip.log
    #date >> ./rip/autorip.log
     exit 0
   fi
@@ -54,7 +58,7 @@ fi
 if [ 1 ]
 then
     echo "GO! " >> ./rip/autorip.log
-       date >> ./rip/autorip.log
+       date >> $output/autorip.log
     mintime=20
     lsdvd /dev/sr1 | grep -i Length > not.tmp
     titles=$(wc -l < not.tmp )
@@ -72,14 +76,14 @@ then
             if [[ $totalmin -gt $mintime ]]; then
                 echo Title $counter of $titles length is $totalmin minutes !!!
                 COPYTO=$"$tempFolder/$TITLE-T$counter.avi"
-                OUTPUT=$"./rip/handbraketmp/$TITLE-T$counter.avi"
+                OUTPUT=$"$output/$TITLE-T$counter.avi"
                 #COPYTO=$"./rip/$TITLE.avi"
                 #OUTPUT=$"./rip/handbraketmp/$TITLE.avi"
                 
 
 
-                  echo "Ripping title to " $COPYTO >> ./rip/autorip.log
-                  date >> ./rip/autorip.log
+                  echo "Ripping title to " $COPYTO >> $output/autorip.log
+                  date >> $output/autorip.log
                 #cpulimit -l80
                 #./HandBrakeCLI -C1 -i /dev/sr1 -o $OUTPUT -t $counter -e x264  -q 0.4 -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --cpu 4 --decomb -4 -X 960 --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0
 
@@ -97,8 +101,8 @@ then
                 #HandBrakeCLI -C1 -i $drive -o "$COPYTO" -t "$counter" -e x264 -q 0.4 -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X 960 --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0
 
 
-                echo "Done ripping, moving file, umounting disc and ejecting." >> ./rip/autorip.log
-                   date >> ./rip/autorip.log
+                echo "Done ripping, moving file, umounting disc and ejecting." >> $output/autorip.log
+                   date >> $output/autorip.log
                 mv $COPYTO $OUTPUT
             else
                 echo Title $counter of $titles length is $totalmin minutes
