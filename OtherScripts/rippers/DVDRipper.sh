@@ -18,6 +18,10 @@ size=720 #920, 1080
 threads=5
 opt="Very Fast 720p30"
 #opt="Very Fast 480p30"
+#opt="Fast 480p30"
+s="fast" #ultrafast, superfast, veryfast, faster, fast, medium to slow, slower and veryslow
+
+start=1
 if [ -d $output ]; then
     echo "directory exists"
 else
@@ -67,7 +71,7 @@ then
     TITLE=$(lsdvd $drive | grep -i Disc | sed 's/Disc Title: //g')
     echo "Disc title: " $TITLE
     echo There are $titles titles
-    let counter=1
+    let counter=$start
     let ttitles=$titles+1
     while [[ $counter <  $ttitles ]]; do
         echo "Title " $counter "",
@@ -89,11 +93,13 @@ then
                 #cpulimit -l80
                 #./HandBrakeCLI -C1 -i /dev/sr1 -o $OUTPUT -t $counter -e x264  -q 0.4 -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --cpu 4 --decomb -4 -X 960 --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0
 
-#ultrafast, superfast, veryfast, faster, fast, medium to slow, slower and veryslow
-#cpulimit -c5 
-               # HandBrakeCLI -C1 -i $drive -o $COPYTO -t $counter -e x264  -q 20 --x264-preset ultrafast --x264-tune fastdecode -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X $size --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0 -Z $opt #--nlmeans=threads=$threads
 
-HandBrakeCLI -C1 -i $drive -o $COPYTO -t $counter -e x264  -q 20 --x264-preset ultrafast --x264-tune fastdecode -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X $size --keep-display-aspect --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0 -Z "$opt"
+#cpulimit -c5 
+               #HandBrakeCLI -C1 -i $drive -o $COPYTO -t $counter -e x264  -q 20 --x264-preset ultrafast --x264-tune fastdecode -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X $size --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0 -Z $opt #--nlmeans=threads=$threads
+
+#HandBrakeCLI -C1 -i $drive -o $COPYTO -t $counter -e x264  -q 20 --x264-preset ultrafast --x264-tune fastdecode -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X $size --keep-display-aspect --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0 -Z "$opt"
+
+HandBrakeCLI -i $drive -o $COPYTO -t $counter -e x264 -q 20 --x264-preset $level --x264-tune fastdecode --preset "$opt" -2 -T -r 23.976 -E faac,ac3 -B 128,128 --pfr -b 550 --auto-anamorphic -6 dpl2,auto -R 24,Auto -D 1.0,0.0 --decomb 4 -f mp4 -m -x level=4.1 #--nlmeans=threads=$threads #--loose-anamorphic #
 
 #--auto-anamorphic
 
