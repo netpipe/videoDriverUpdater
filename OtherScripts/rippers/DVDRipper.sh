@@ -19,7 +19,7 @@ threads=5
 opt="Very Fast 720p30"
 #opt="Very Fast 480p30"
 #opt="Fast 480p30"
-s="fast" #ultrafast, superfast, veryfast, faster, fast, medium to slow, slower and veryslow
+level="fast" #ultrafast, superfast, veryfast, faster, fast, medium to slow, slower and veryslow
 
 start=1
 if [ -d $output ]; then
