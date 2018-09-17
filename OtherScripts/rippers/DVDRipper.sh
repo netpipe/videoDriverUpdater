@@ -99,7 +99,7 @@ then
 
 #HandBrakeCLI -C1 -i $drive -o $COPYTO -t $counter -e x264  -q 20 --x264-preset ultrafast --x264-tune fastdecode -a 1,1 -E faac,ac3 -B 160,160 -6 dpl2,auto -R 48,Auto -D 1.0,0.0 -f mp4 --decomb 4 -X $size --keep-display-aspect --loose-anamorphic -m -x cabac=0:ref=2:me=umh:b-adapt=2:weightb=0:trellis=0 -Z "$opt"
 
-HandBrakeCLI -i $drive -o $COPYTO -t $counter -e x264 -q 20 --x264-preset $level --x264-tune fastdecode --preset "$opt" -2 -T -r 23.976 -E faac,ac3 -B 128,128 --pfr -b 550 --auto-anamorphic -6 dpl2,auto -R 24,Auto -D 1.0,0.0 --decomb 4 -f mp4 -m -x level=4.1 #--nlmeans=threads=$threads #--loose-anamorphic #
+HandBrakeCLI -i $drive -o "$COPYTO" -t $counter -e x264 -q 20 --x264-preset $level --x264-tune fastdecode --preset "$opt" -2 -T -r 23.976 -E faac,ac3 -B 128,128 --pfr -b 550 --auto-anamorphic -6 dpl2,auto -R 24,Auto -D 1.0,0.0 --decomb 4 -f mp4 -m -x level=4.1 #--nlmeans=threads=$threads #--loose-anamorphic #
 
 #--auto-anamorphic
 
