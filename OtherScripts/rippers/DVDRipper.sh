@@ -81,8 +81,8 @@ then
         let totalmin=$totalmin+$min
             if [[ $totalmin -gt $mintime ]]; then
                 echo Title $counter of $titles length is $totalmin minutes !!!
-                COPYTO=$"$tempFolder/$TITLE-T$counter.avi"
-                OUTPUT=$"$output/$TITLE-T$counter.avi"
+                COPYTO="$tempFolder/$TITLE-T$counter.avi"
+                OUTPUT="$output/$TITLE-T$counter.avi"
                 #COPYTO=$"./rip/$TITLE.avi"
                 #OUTPUT=$"./rip/handbraketmp/$TITLE.avi"
                 
