@@ -1,0 +1,26 @@
+#! /bin/bash
+if [ -e -n $1 ]; then
+obj="$CAJA_SCRIPT_SELECTED_FILE_PATHS"
+
+else
+base="`echo $CAJA_SCRIPT_CURRENT_URI | cut -d'/' -f3- | sed 's/%20/ /g'`"
+obj="$base/${1##*/}"
+fi
+# Determine the type and run as ROOT
+URL== zenity --entry
+#wget -qO- $URL | htmldoc --webpage -f $base/page.pdf - & xpdf $base/page.pdf  #"$URL"
+wget -qO- $URL | wkhtmltopdf $base/page.pdf - & xpdf $base/page.pdf  #"$URL"
+
+
+if [ -f "$obj" ]; then
+#[]
+#	gnomesu gedit "$obj"
+elif [ -d "$obj" ]; then
+ #      gnomesu caja "$obj"
+fi
+
+exit 0
+#pkexec 
+#gnomesu caja "$CAJA_SCRIPT_SELECTED_FILE_PATHS"
+         
+#gksu caja $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS

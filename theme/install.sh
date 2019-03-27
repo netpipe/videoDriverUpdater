@@ -4,4 +4,5 @@
 
 cp /UI/* ~/.themes/
 cp Alpha-1 ~/.icons/
-cp /scripts ~/.config/caja/scripts
+#cp /mime/local/ ~/.local/
+#cp /scripts ~/.config/caja/scripts
