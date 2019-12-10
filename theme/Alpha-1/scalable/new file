@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ find ./ | while read in; do
+convert $in -resize 32x32! resized/${in}.png
+done

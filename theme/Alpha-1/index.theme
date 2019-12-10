@@ -4,24 +4,24 @@
 
 [Icon Theme]
 Name=Alpha-1
-Comment=Alpha1-by-Naf
-Example=scalable/places/folder.png
-Inherits=Breathless,Mac4Lin_Icons,nuevo,etc.
+Comment=Alpha1-by-Naf - modified by net|
+Example=scalable/places/32/folder.png
+Inherits=Breathless,Mac4Lin_Icons,nuevo,Breeze
 
-Directories=scalable/actions,scalable/animations,scalable/apps,scalable/apps/22,scalable/apps/32,scalable/apps/48,scalable/apps/72,scalable/games,scalable/categories,scalable/spinner,scalable/places,scalable/mimetypes,scalable/devices,,scalable/emblems,scalable/emblems/32,scalable/emblems/48,scalable/status,scalable/status/32,scalable/status/48,scalable/status/128
+Directories=scalable/actions/32,scalable/actions/22,scalable/animations/32,scalable/apps/scalable,scalable/apps/32,scalable/games/32,scalable/categories/32,scalable/spinner/32,scalable/places/32,scalable/mimetypes/32,scalable/devices/32,scalable/emblems/32,scalable/emblems/32,scalable/emblems/32,scalable/status/scalable,scalable/status/32,scalable/templates/32,scalable/places/scalable,scalable/mimetypes/scalable
 
-[scalable/actions]
+[scalable/actions/22]
 Size=32
 Context=Actions
 Type=scalable
 
-[scalable/animations]
+[scalable/animations/32]
 Size=22
 Context=Animations
 Type=Fixed
 
-[scalable/emblems]
-Size=64
+[scalable/emblems/32]
+Size=32
 Context=Emblems
 Type=scalable
 MinSize=1
@@ -33,12 +33,12 @@ Context=Emblems
 Type=scalable
 
 [scalable/emblems/48]
-Size=48
+Size=32
 Context=Emblems
 Type=scalable
 
-[scalable/apps]
-Size=128
+[scalable/apps/32]
+Size=32
 Context=Applications
 Type=scalable
 
@@ -53,49 +53,49 @@ Context=Applications
 Type=scalable
 
 [scalable/apps/48]
-Size=48
+Size=32
 Context=Applications
 Type=scalable
 
 [scalable/apps/72]
-Size=72
+Size=32
 Context=Applications
 Type=Fixed
 
-[scalable/categories]
-Size=64
+[scalable/categories/32]
+Size=32
 Context=Categories
 Type=scalable
 MinSize=32
 MaxSize=256
 
-[scalable/games]
-Size=128
+[scalable/games/32]
+Size=32
 Context=Applications
 Type=scalable
 
-[scalable/spinner]
+[scalable/spinner/32]
 Size=22
 Context=Applications
 Type=scalable
 
-[scalable/devices]
-Size=128
+[scalable/devices/32]
+Size=32
 Context=Devices
 Type=scalable
 
-[scalable/places]
-Size=128
+[scalable/places/32]
+Size=32
 Context=Places
 Type=scalable
 
-[scalable/mimetypes]
-Size=128
+[scalable/mimetypes/32]
+Size=32
 Context=MimeTypes
 Type=scalable
 
-[scalable/status]
-Size=64
+[scalable/status/32]
+Size=32
 Context=Status
 Type=scalable
 
@@ -110,6 +110,15 @@ Context=Status
 Type=scalable
 
 [scalable/status/128]
-Size=128
+Size=32
 Context=Status
 Type=scalable
+
+#[scalable/places/scalable]
+#Size=48
+#Context=Places
+#Type=scalable
+#[scalable/mimetypes/scalable]
+#Size=48
+#Context=MimeTypes
+#Type=scalable

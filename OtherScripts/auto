@@ -2,6 +2,7 @@
 #Tecan
 #Description: add to /usr/local/bin and use
 
+
 aclocal
 automake
 autoreconf
@@ -10,4 +11,14 @@ libtoolize -i
 automake --add-missing
 ./configure
 
-$make
+echo " do you want to make ? type y"
+read in
+if [[ $in == "y" ]]; then
+	echo "make"
+	$make
+	read in
+	if [[ $in == "y" ]]; then
+		echo "make install"
+		sudo make install	
+	fi
+fi
